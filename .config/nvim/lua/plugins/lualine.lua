@@ -19,8 +19,12 @@ local colors = {
 local bubbles_theme = {
   normal = {
     a = { fg = colors.black, bg = colors.blue},
-    b = { fg = colors.grey, bg = colors.dblack },
-    c = { fg = colors.grey },
+    b = { fg = colors.lgrey, bg = colors.dblack },
+    c = { fg = colors.lgrey },
+
+		x = { fg = colors.lgrey },
+		y = { fg = colors.lgrey, bg = colors.dblack },
+		z = { fg = colors.black, bg = colors.blue},
   },
 
   insert = { a = { fg = colors.black, bg = colors.pink} },
