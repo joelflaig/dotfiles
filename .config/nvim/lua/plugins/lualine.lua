@@ -119,23 +119,35 @@ return {
 			},
 
 			lualine_b = {
-				{ 'branch', icon = '' },
-			},
-
-			lualine_c = {
-				'%=',
-				{ path, icon = '', separator = seps },
+				{ 'branch', icon = '', separator = seps },
 				{
 					'diff',
 					colored = true,
 					diff_color = {
-						added = 'LualineDiffAdd',
-						modified = 'LualineDiffChange',
-						removed = 'LualineDiffDelete',
+						added = { fg = colors.green },
+						modified = { fg = colors.orange },
+						removed = { fg = colors.red },
 					},
 					symbols = { added = ' ', modified = ' ', removed = ' ' },
-					separator = seps,
+					separator = { left = '' },
 				}
+			},
+
+			lualine_c = {
+				'%=',
+				{
+				function()
+					return ' '
+				end,
+				separator = { left = '' },
+        },
+				{ path, icon = '', separator = seps },
+				{
+				function()
+					return ' '
+				end,
+				separator = { right = '' },
+        }
 			},
 
 			lualine_x = {
@@ -148,6 +160,7 @@ return {
             color_warn = { fg = colors.yellow },
             color_info = { fg = colors.cyan },
 					},
+					separator = { left = '' },
 				}
       },
 
