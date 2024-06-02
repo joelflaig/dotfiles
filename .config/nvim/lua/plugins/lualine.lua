@@ -39,6 +39,14 @@ local bubbles_theme = {
   },
 }
 
+function macro()
+  local reg = vim.fn.reg_recording()
+  if reg == "" then
+		return "" 
+	end
+  return " " .. reg
+end
+
 function shortmode ()
 	mode = vim.api.nvim_get_mode()["mode"]
 	if mode == "n" then
@@ -107,6 +115,7 @@ return {
 
 			lualine_a = { 
 				{ shortmode, icon = '', separator = seps },
+				{ macro, icon = '', separator = seps },
 			},
 
 			lualine_b = {
