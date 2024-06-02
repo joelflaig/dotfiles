@@ -1,0 +1,115 @@
+# aliases for zsh
+alias :q=exit
+alias ;q=exit
+alias q=exit
+alias x=exit
+alias ez='exec zsh'
+alias t=touch
+alias md=mkdir
+alias aliases='bat ~/.zsh_aliases'
+alias nitch="~/.config/nitch/nitch"
+alias "pipes"="pipes.sh -t 1"
+alias city="zsh ~/dotfiles/city.sh"
+alias cc='bash ~/dotfiles/cat.sh'
+alias c="clear && city"
+
+# configuration aliases
+alias cfg='nvim ~/dotfiles/.zshrc'
+alias cfga='nvim ~/dotfiles/.zsh_aliases'
+alias cfgt='nvim ~/dotfiles/.tmux.conf'
+alias cfgv='nvim ~/dotfiles/.config/nvim'
+alias cfgs='nvim ~/.config/starship.toml'
+
+# aliases for machine initialization
+alias ini_init='init/init.sh'
+alias ini_test='init/test.sh'
+
+# git aliases
+alias gs='git status'
+alias gl='git log'
+alias gd='git diff'
+
+alias ga='git add'
+alias gai='git add -i'
+alias gaa='git add -A'
+
+alias gcm='git commit -m "'
+
+alias gps='git push'
+alias gpl='git pull'
+
+# lazygit
+alias lg=lazygit
+
+# z aliases
+alias z=cd
+alias zi=cdi
+alias df='z ~/dotfiles'
+alias nex='z ~/programming/mojo/Nexus/'
+alias dsa='z ~/programming/mojo/Nexus-DSA'
+alias net='z ~/programming/mojo/NexusNet'
+alias tui='z ~/programming/mojo/Nexus-TUI'
+alias cli='z ~/programming/mojo/Nexus/cli'
+alias zsw='zoxide query -l -s | bat'
+
+# python
+alias python=python3
+alias pip=pip3
+alias py=python
+
+# Mojo
+alias build='bash ./bin/build.sh'
+alias test='bash ./src/tests/test.sh'
+
+# ls aliases
+alias l='eza --group-directories-first'
+alias ls='eza --icons --group-directories-first'
+alias ll='ls -alh --group-directories-first'
+alias la='ls -a --group-directories-first'
+alias lt='ls -a --tree --group-directories-first'
+alias lt2='ls -a --tree -L 2'
+alias lt3='ls -a --tree -L 3'
+alias le='ls -@'
+alias ltg='lt --git'
+alias lag='la --git'
+cl() {
+	z "$@" && la
+}
+
+cdc() {
+	z "$@" && c
+}
+
+# cat aliases
+alias cat='bat --style full --tabs 2'
+alias cgd='bat --diff-context 3'
+
+# fzf aliases
+alias fzf="fzf --border rounded --margin 2.5% --preview='bat --color=always --style full --tabs 2 {}'"
+alias gdf="fzf --border rounded --margin 2.5% --preview='bat --color=always --style full --tabs 2 --diff-context 3 {}'"
+
+# fzf with various other commands
+alias nvf='nvim $(fzf)'
+alias batf='bat $(fzf)'
+alias cgdf='cgd $(fzf)'
+
+# fzf aliases for file editing
+alias cfgf="df && nvf"
+alias nexf="nex && nvf"
+alias dsaf="dsa && nvf"
+alias netf="net && nvf"
+alias tuif="tui && nvf"
+alias clif="cli && nvf"
+
+# yazi
+alias y='yazi'
+
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
+
