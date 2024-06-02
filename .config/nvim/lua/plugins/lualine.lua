@@ -53,6 +53,8 @@ function shortmode ()
 		return "C"
 	elseif mode == "t" then
 		return "T"
+	else
+		return "?"
   end
 end
 
