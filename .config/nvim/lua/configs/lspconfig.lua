@@ -1,6 +1,6 @@
 -- EXAMPLE 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls", "mojo", }
+local servers = { "html","lua_ls", "cssls", "mojo", }
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do

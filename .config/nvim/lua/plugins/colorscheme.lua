@@ -1,6 +1,10 @@
-function opts()
-	return {
-		flavour = "mocha",
+return {
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	lazy = false,
+	opts = {
+    flavour = "mocha",
 		transparent_background = true,
 		term_colors = true,
 
@@ -40,17 +44,6 @@ function opts()
 				style = "nvchad"
 			},
 	  }
-  }
-end
-
-return {
-	"catppuccin/nvim",
-	name = "catppuccin",
-	priority = 1000,
-	lazy = false,
-	config = function()
-		vim.cmd([[colorscheme catppuccin]])
-		require("catppuccin").setup(opts())
-	end
+	}
 }  
 
