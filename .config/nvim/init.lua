@@ -9,7 +9,8 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
--- background color
+-- termguicolors
+vim.opt.termguicolors = true
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -30,6 +31,9 @@ local lazy_config = require "configs.lazy"
 
 -- lazy config
 require("lazy").setup("plugins", lazy_config)
+
+-- colorscheme
+vim.cmd "colorscheme catppuccin"
 
 -- dashboard
 vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#5f5f5f" })

@@ -1,9 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
-- /home/joel/dotfiles
-- /home/joel/init
+    - /home/joel/dotfiles
+    - /home/joel/init
 startuppopupversion: 5
-lastversion: 0.41.0
+lastversion: 0.42.0
 customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false
