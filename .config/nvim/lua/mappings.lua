@@ -24,3 +24,7 @@ map('n', '<leader>fh', telescope.help_tags, {}, { desc = " Find help" })
 -- gitsigns
 map('n', '<leader>tlb', '<cmd> Gitsigns toggle_current_line_blame <cr>', { desc = "Toggle git blame" })
 
+-- fold
+map('n', 'zR', require('ufo').openAllFolds)
+map('n', 'zM', require('ufo').closeAllFolds)
+
