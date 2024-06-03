@@ -1,5 +1,5 @@
 # aliases for bash
-alias c=clear
+alias c='clear && bash ~/dotfiles/city.sh'
 alias :q=exit
 alias q=exit
 alias x=exit

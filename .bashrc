@@ -144,5 +144,6 @@ eval $(thefuck --alias fk)
 
 tmux
 clear
+bash ~/dotfiles/city.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
