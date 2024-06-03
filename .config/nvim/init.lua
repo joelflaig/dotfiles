@@ -1,16 +1,32 @@
--- config
+-- Neovim config
+-- leader
 vim.g.mapleader = ' '
 vim.g.localleader = ' '
+-- indent
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
+-- numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.numberwidth = 4
+vim.opt.numberwidth = 3
+-- splits
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
+-- fold
+vim.o.foldenable = true
+vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
+vim.o.foldcolumn = '5'
+vim.o.foldlevel = 99
+vim.o.foldlevelstart = 99
+-- nerd font
+vim.g.have_nerd_font = true
 -- termguicolors
 vim.opt.termguicolors = true
+-- Indent line highlight
+vim.cmd.highlight('IndentLine guifg=#767676')
+-- Current indent line highlight
+vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
