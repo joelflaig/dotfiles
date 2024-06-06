@@ -4,9 +4,9 @@ return {
 
   ui = {
     icons = {
-      cmd = "",
+      cmd = "",
       ft = "",
-      lazy = "󰂠 ",
+      lazy = "󰒲 ",
       loaded = "",
       not_loaded = "",
     },
