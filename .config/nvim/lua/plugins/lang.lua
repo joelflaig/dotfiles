@@ -26,6 +26,10 @@ return {
   },
 
   {
+    "williamboman/mason-lspconfig.nvim",
+  },
+
+  {
     "nvim-treesitter/nvim-treesitter",
  	  opts = {
    		ensure_installed = {
@@ -35,3 +39,4 @@ return {
   	},
   },
  }
+
