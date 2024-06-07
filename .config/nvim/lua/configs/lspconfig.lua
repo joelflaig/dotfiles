@@ -1,6 +1,29 @@
 -- EXAMPLE 
 local lspconfig = require "lspconfig"
 local servers = { "html","lua_ls", "cssls", "mojo", }
+local mason = require("mason")
+local mason_lspconfig = require("mason-lspconfig")
+
+mason_lspconfig.setup {
+  ensure_installed = {
+    "lua_ls",
+    "rust_analyzer",
+  },
+}
+
+mason.setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗",
+    },
+  },
+  ensure_installed = {
+    "lua_language_server",
+    "rust_analyzer",
+  }
+})
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -33,6 +56,8 @@ cmp.setup{
   },
 
   mapping = cmp.mapping.preset.insert({
+      ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
+      ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
@@ -66,5 +91,4 @@ cmp.setup{
     matching = { disallow_symbol_nonprefix_matching = false }
   }),
 }
-
 
