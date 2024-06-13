@@ -114,7 +114,7 @@ return {
 		sections = {
 
 			lualine_a = { 
-				{ shortmode, icon = '', separator = seps },
+				{ shortmode, icon = '', separator = seps },
 				{ macro, icon = '', separator = seps },
 			},
 

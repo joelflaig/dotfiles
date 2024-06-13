@@ -6,7 +6,10 @@ promptinit
 zstyle ':completion:*' menu select
 zstyle ':completion::complete:*' gain-privileges 1
 
+# behave like vim
 set -o vi
+
+# startup folder
 cd ~
 
 # aliases
