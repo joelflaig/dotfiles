@@ -14,6 +14,7 @@ map("n", "<leader>q", "<cmd> qa <cr>", { desc = " Quit all open buffers"})
 map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
 map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save"})
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
+map("n", "9", "^", { desc = "Jump to first non-white" })
 
 -- buffer nav
 map('n', "<leader>w", "<C-w>")
