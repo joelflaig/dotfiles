@@ -13,7 +13,7 @@ command_timeout = 100000
 # color palette
 palette = 'catppuccin_mocha'
 
-continuation_prompt = '[](blue)' # duh
+continuation_prompt = '[ ](bold blue)' # duh
 
 [status]
 disabled = false
@@ -21,7 +21,7 @@ disabled = false
 [character] # The name of the module we are configuring is 'character'
 success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '❯' with the color 'bold green'
 error_symbol = "[](bold red)"
-vimcmd_symbol = "[](bold green)"
+vimcmd_symbol = "[](bold blue)"
 vimcmd_visual_symbol = "[](bold yellow)"
 vimcmd_replace_symbol = "[](bold purple)"
 vimcmd_replace_one_symbol = "[](bold purple)"
