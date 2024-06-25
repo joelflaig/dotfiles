@@ -8,9 +8,9 @@ alias t=touch
 alias md=mkdir
 alias aliases='bat ~/.zsh_aliases'
 alias nitch="~/.config/nitch/nitch"
-alias "pipes"="pipes.sh -t 1"
+alias "pipes"="pipes.sh -t 1 -r 5000"
 alias city="zsh ~/dotfiles/city.sh"
-alias cc='bash ~/dotfiles/cat.sh'
+alias cc='zsh ~/dotfiles/cat.sh'
 alias c="clear && city"
 
 # configuration aliases

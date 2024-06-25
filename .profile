@@ -36,3 +36,4 @@ if command -v termium > /dev/null 2>&1; then
   eval "$(termium shell-hook show post)"
 fi
 ### End of Codeium integration
+. "$HOME/.cargo/env"

@@ -30,6 +30,7 @@ map('n', "<M-k>", "<C-w>-")
 map('n', "<M-l>", "<C-w>>")
 
 -- telescope mappings
+map('n', '<leader>tel', '<cmd> Telescope <cr>', {}, { desc = "Open telescope" })
 map('n', '<leader>ff', telescope.find_files, {}, { desc = " Find files" })
 map('n', '<leader>fg', telescope.live_grep, {}, { desc = " Find text" })
 map('n', '<leader>fb', telescope.buffers, {}, { desc = " Find buffers" })
