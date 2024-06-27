@@ -31,12 +31,12 @@ map('n', "<M-k>", "<C-w>-")
 map('n', "<M-l>", "<C-w>>")
 
 -- telescope mappings
-map('n', '<leader>tel', '<cmd> Telescope <cr>', { desc = "Open telescope" })
-map('n', '<leader>ff', telescope.find_files, { desc = " Find files" })
-map('n', '<leader>fg', telescope.live_grep, { desc = " Find text" })
-map('n', '<leader>fb', telescope.buffers, { desc = " Find buffers" })
-map('n', '<leader>fh', telescope.help_tags, { desc = " Find help" })
-map('n', '<leader>fr', telescope.oldfiles, { desc = "󰑐 Find old files"})
+map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true <cr>', { desc = "Open telescope" })
+map('n', '<leader>ff', '<cmd> Telescope find_files hidden=true no_ignore=true <cr>', { desc = " Find files" })
+map('n', '<leader>fg', '<cmd> Telescope live_grep hidden=true no_ignore=true <cr>', { desc = " Find text" })
+map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>', { desc = " Find buffers" })
+map('n', '<leader>fh', '<cmd> Telescope help_tags hidden=true no_ignore=true <cr>', { desc = " Find help" })
+map('n', '<leader>fr', '<cmd> Telescope oldfiles hidden=true no_ignore=true <cr>', { desc = "󰑐 Find old files"})
 
 -- gitsigns
 map('n', '<leader>tlb', '<cmd> Gitsigns toggle_current_line_blame <cr>', { desc = "Toggle git blame" })
