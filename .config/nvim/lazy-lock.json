@@ -10,6 +10,7 @@
   "codesnap.nvim": { "branch": "main", "commit": "a223fd882953e56ae1a8747fdc44b8d6a2ff7a9b" },
   "conform.nvim": { "branch": "master", "commit": "c26dadf8a47a547768d1048a0d698ecec33494ce" },
   "dashboard-nvim": { "branch": "master", "commit": "69a4c935cc43d3d725ed0600c6d00593bc23d132" },
+  "flash.nvim": { "branch": "main", "commit": "43f67935d388fbb540f8b40e8cbfd80de54f978a" },
   "gitsigns.nvim": { "branch": "main", "commit": "6b1a14eabcebbcca1b9e9163a26b2f8371364cb7" },
   "hererocks": { "branch": "master", "commit": "8bd2fcfdd65cfa7535ce39ea372a63b0bdb8e528" },
   "image.nvim": { "branch": "master", "commit": "7d021c94e231d491355f5e724ba357ace296f06d" },

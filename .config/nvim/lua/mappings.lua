@@ -5,6 +5,8 @@ local unmap = vim.keymap.del
 -- basic mappings
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
 map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard" })
+map({"n", "v"}, "J", "jzz")
+map({"n", "v"}, "K", "kzz")
 -- map("i", "jk", "<ESC>")
 -- map("i", "<Enter>", "<CR>")
 map("n", "<leader>q", "<cmd> qa <cr>", { desc = " Quit all open buffers"})
@@ -57,6 +59,8 @@ map('n', '<leader>fc', '<cmd> Neotree current <cr>', { desc = " Toggle filetr
 
 -- buffers
 map("n", "<leader>x", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
-map("n", "<leader>bn", "<cmd> e no name <cr>", { desc = " Create new buffer" })
+map("n", "<leader>J", "<cmd> BufferPrevious <cr>", { desc = " Goto previous buffer" })
+map("n", "<leader>K", "<cmd> BufferNext <cr>", { desc = " Goto previous buffer" })
+map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
 map("n", "<leader>p", "<cmd> BufferPin<cr>", { desc = " Pin current buffer" })
 
