@@ -50,6 +50,9 @@ local lazy_config = require "configs.lazy"
 -- lazy config
 require("lazy").setup("plugins", lazy_config)
 
+-- lspconfig load
+require("configs.lspconf")
+
 -- colorscheme
 vim.cmd "colorscheme catppuccin"
 
