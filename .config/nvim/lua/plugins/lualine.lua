@@ -39,16 +39,16 @@ local bubbles_theme = {
   },
 }
 
-function macro()
+local function macro()
   local reg = vim.fn.reg_recording()
   if reg == "" then
-		return "" 
+		return ""
 	end
   return " " .. reg
 end
 
-function shortmode ()
-	mode = vim.api.nvim_get_mode()["mode"]
+local function shortmode ()
+	local mode = vim.api.nvim_get_mode()["mode"]
 	if mode == "n" then
 		return "N"
 	elseif mode == "i" then
@@ -70,7 +70,7 @@ function shortmode ()
   end
 end
 
-function splitunixpath(inputstr)
+local function splitunixpath(inputstr)
   local sep = "/"
   local t = {}
   for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
@@ -80,7 +80,7 @@ function splitunixpath(inputstr)
 end
 
 -- for windows (??)
-function splitwindowspath(inputstr)
+local function splitwindowspath(inputstr)
 	local sep = "\\"
   local t = {}
   for str in string.gmatch(inputstr, "([^"..sep.."]+)") do
@@ -89,12 +89,12 @@ function splitwindowspath(inputstr)
   return t
 end
 
-function path ()
-	local path = vim.api.nvim_buf_get_name(0)
-	path = splitunixpath(path) -- only unix
-	-- path = splitwindowspath(path) -- only windows
-	return table.concat(path, "/", #path-1, #path)
-	-- return table.concat(path, "\", #path-1, #path) -- windows (??)
+local function path ()
+	local p = vim.api.nvim_buf_get_name(0)
+	p = splitunixpath(p) -- only unix
+	-- path = splitwindowspath(p) -- only windows
+	return table.concat(p, "/", #p-1, #p)
+	-- return table.concat(p, "\", #p-1, #p) -- windows (??)
 end
 
 local seps = { left = ' ', right = ' ' }
@@ -113,7 +113,7 @@ return {
 
 		sections = {
 
-			lualine_a = { 
+			lualine_a = {
 				{ shortmode, icon = '', separator = seps },
 				{ macro, icon = '', separator = seps },
 			},
@@ -129,7 +129,7 @@ return {
 						removed = { fg = colors.red },
 					},
 					symbols = { added = ' ', modified = ' ', removed = ' ' },
-					separator = { left = '' },
+					separator = seps,
 				}
 			},
 
