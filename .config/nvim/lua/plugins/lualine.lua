@@ -93,7 +93,7 @@ local function path ()
 	local p = vim.api.nvim_buf_get_name(0)
 	p = splitunixpath(p) -- only unix
 	-- path = splitwindowspath(p) -- only windows
-	return table.concat(p, "/", #p-1, #p)
+	return p[#p-2] .. "/" .. table.concat(p, "/", #p-1, #p)
 	-- return table.concat(p, "\", #p-1, #p) -- windows (??)
 end
 
