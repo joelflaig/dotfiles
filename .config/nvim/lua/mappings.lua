@@ -2,10 +2,6 @@
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
--- telescope
-local telescope = require('telescope.builtin')
-
-
 -- basic mappings
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
 map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard" })
@@ -31,7 +27,7 @@ map('n', "<M-k>", "<C-w>-")
 map('n', "<M-l>", "<C-w>>")
 
 -- telescope mappings
-map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true <cr>', { desc = "Open telescope" })
+map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true <cr>', { desc = " Open telescope" })
 map('n', '<leader>ff', '<cmd> Telescope find_files hidden=true no_ignore=true <cr>', { desc = " Find files" })
 map('n', '<leader>fg', '<cmd> Telescope live_grep hidden=true no_ignore=true <cr>', { desc = " Find text" })
 map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>', { desc = " Find buffers" })
@@ -54,4 +50,13 @@ map('n', '<leader>bk', require 'dap'.step_out)
 map('n', '<leader>b', require 'dap'.toggle_breakpoint)
 map('n', '<leader>be', require("dapui").eval)
 map('n', '<leader>bf', require("dapui").float_element)
+
+-- filetree
+map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetree"})
+map('n', '<leader>fc', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
+
+-- buffers
+map("n", "<leader>x", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
+map("n", "<leader>bn", "<cmd> e no name <cr>", { desc = " Create new buffer" })
+map("n", "<leader>p", "<cmd> BufferPin<cr>", { desc = " Pin current buffer" })
 

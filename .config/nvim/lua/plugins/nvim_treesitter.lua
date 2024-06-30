@@ -5,5 +5,8 @@ return {
 		matchup = {
 			enable = true,
 		},
+    highlight = {
+      disable = { "help", "man" }, -- list of language that will be disabled
+    },
 	}
 }
