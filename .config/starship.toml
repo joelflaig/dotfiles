@@ -16,6 +16,25 @@ palette = 'catppuccin_mocha'
 continuation_prompt = '[ ](bold blue)' # duh
 
 [status]
+format = "[$symbol$status]($style) "
+symbol = "❌"
+success_symbol = ""
+not_executable_symbol = "🚫"
+not_found_symbol = "🔍"
+sigint_symbol = "🧱"
+signal_symbol = "⚡"
+style = "bold red"
+map_symbol = true
+recognize_signal_code = true
+pipestatus = true
+pipestatus_separator = "|"
+disabled = false
+
+[sudo]
+format = "[as $symbol]($style)"
+symbol = "🧙 "
+style = "bold blue"
+allow_windows = true
 disabled = false
 
 [character] # The name of the module we are configuring is 'character'
