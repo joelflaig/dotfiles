@@ -81,16 +81,16 @@ cdc() {
 }
 
 # cat aliases
-alias cat='bat --style full --tabs 2'
-alias cgd='bat --diff-context 3'
+alias cat='bat --theme "Catppuccin Mocha" --style full --tabs 2'
+alias cgd='bat --theme "Catppuccin Mocha" --diff-context 3'
 
 # fzf aliases
-alias fzf="fzf --border rounded --margin 2.5% --preview='bat --color=always --style full --tabs 2 {}'"
-alias gdf="fzf --border rounded --margin 2.5% --preview='bat --color=always --style full --tabs 2 --diff-context 3 {}'"
+alias fzf="fzf --border rounded --margin 2.5% --preview='cat {}'"
+alias gdf="fzf --border rounded --margin 2.5% --preview='cgd {}'"
 
 # fzf with various other commands
 alias nvf='nvim $(fzf)'
-alias batf='bat $(fzf)'
+alias batf='cat $(fzf)'
 alias cgdf='cgd $(fzf)'
 
 # fzf aliases for file editing
