@@ -9,7 +9,6 @@ map({"n", "v"}, "J", "jzz")
 map({"n", "v"}, "K", "kzz")
 -- map("i", "jk", "<ESC>")
 -- map("i", "<Enter>", "<CR>")
-map("n", "<leader>q", "<cmd> qa <cr>", { desc = " Quit all open buffers"})
 map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
 map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save"})
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
@@ -58,7 +57,7 @@ map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetre
 map('n', '<leader>fc', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
 
 -- buffers
-map("n", "<leader>x", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
+map("n", "<leader>q", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
 map("n", "<leader>J", "<cmd> BufferPrevious <cr>", { desc = " Goto previous buffer" })
 map("n", "<leader>K", "<cmd> BufferNext <cr>", { desc = " Goto previous buffer" })
 map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
