@@ -43,11 +43,12 @@ return {
         -- stylua: ignore
         center = {
           { action = "ene | startinsert", desc = " new file", icon = " ", key = "e" },
-          { action = "Telescope find_files hidden=true no_ignore=true", desc = " find file", icon = "󰈞 ", key = "f" },
+          { action = "Telescope find_files hidden=true no_ignore=true", desc = " find file", icon = "󰱼 ", key = "f" },
           { action = "Telescope oldfiles hidden=true no_ignore=true", desc = " recent files", icon = "󰑐 ", key = "r" },
           { action = "Telescope live_grep hidden=true no_ignore=true", desc = " find text", icon = "󰺮 ", key = "g" },
+          { action = 'lua require("persistence").load({ last = true })', desc = " last session", icon = " ", key = "s" },
+          { action = 'lua require("persistence").load()', desc = " cwd session", icon = " ", key = "c" },
           { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "l" },
-          -- { action = "!nvim ~/.config/nvim/init.lua", desc = " open config", icon = " ", key = "c" },
           { action = "qa", desc = " quit", icon = " ", key = "q" },
         },
 

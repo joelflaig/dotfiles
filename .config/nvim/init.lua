@@ -57,8 +57,8 @@ require("configs.lspconf")
 vim.cmd "colorscheme catppuccin"
 
 -- dashboard
-vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#89b4fa" })
--- { fg = "#5f5f5f" })
+vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#5f5f5f" })
+-- { fg = "#89b4fa" }
 
 -- mappings
 vim.schedule(function()
