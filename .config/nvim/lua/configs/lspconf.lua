@@ -1,8 +1,14 @@
 -- EXAMPLE 
 local lspconfig = require "lspconfig"
-local servers = { "html","lua_ls", "cssls", "mojo", }
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
+
+local servers = {
+  "html",
+  "lua_ls",
+  "cssls",
+  "mojo",
+}
 
 mason_lspconfig.setup {
   ensure_installed = {

@@ -14,22 +14,22 @@ return {
 "   │'  │ │ │.    │  ││    │ │ │    │ ╭─╯    ││     ││   \n"..
 "───╯   ╰─╯       '  ╰╯    ' ╰─╯    ╰─╯'     ╰╯      ╰───\n"
 
-    local monster = [[⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆
-  ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦
-         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷     ⠻⠿⢿⣿⣧⣄
-           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀ ⠈⠙⠿⠄
-          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀
-    ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄
-  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄
-  ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄
-   ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄
-    ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆
-     ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣀⣤⣾⡿⠃
-    ]]
+    local monster =
+"   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆        \n"..
+"   ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦      \n"..
+"         ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷     ⠻⠿⢿⣿⣧⣄   \n"..
+"          ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄ ⣀⠄⠢⣀⡀⠈⠙⠿⠄  \n"..
+"         ⢠⣿⣿⣿⠈   ⣻⣿⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀  \n"..
+"  ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄ \n"..
+" ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄  \n"..
+"⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄ \n"..
+"⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄\n"..
+"     ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆    \n"..
+"      ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣀⣤⣾⡿⠃    \n"
 
     local logo = city
 
-    logo = string.rep("\n", 8) .. logo .. "\n\n"
+    logo = string.rep("\n", 6) .. logo .. "\n\n"
 
     local opts = {
       theme = "doom",
@@ -46,6 +46,7 @@ return {
           { action = "Telescope find_files hidden=true no_ignore=true", desc = " find file", icon = "󰱼 ", key = "f" },
           { action = "Telescope oldfiles hidden=true no_ignore=true", desc = " recent files", icon = "󰑐 ", key = "r" },
           { action = "Telescope live_grep hidden=true no_ignore=true", desc = " find text", icon = "󰺮 ", key = "g" },
+          { action = "Neotree", desc = " open filetree", icon = " ", key = "t" },
           { action = 'lua require("persistence").load({ last = true })', desc = " last session", icon = " ", key = "s" },
           { action = 'lua require("persistence").load()', desc = " cwd session", icon = " ", key = "c" },
           { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "l" },

@@ -8,7 +8,7 @@ return {
   init = function()
     vim.g.barbar_auto_setup = false
     -- highlights
-    local bg = "#1c1c1c"
+    local bg = "#262626"
     local fg = "#767676"
     local cfg = "#87afff"
     vim.api.nvim_set_hl(0, "BufferCurrent", { bg = bg, fg = cfg })
@@ -20,7 +20,7 @@ return {
     vim.api.nvim_set_hl(0, "BufferInactiveMod", { bg = bg, fg = fg })
     vim.api.nvim_set_hl(0, "BufferVisibleMod", { bg = bg, fg = fg })
     vim.api.nvim_set_hl(0, "BufferCurrentSign", {fg = bg})
-    vim.api.nvim_set_hl(0, "BufferAlternateSign", {fg =bg})
+    vim.api.nvim_set_hl(0, "BufferAlternateSign", {fg = bg})
     vim.api.nvim_set_hl(0, "BufferInactiveSign", {fg = bg})
     vim.api.nvim_set_hl(0, "BufferVisibleSign", {fg = bg})
   end,
@@ -54,7 +54,7 @@ return {
         custom_colors = false,
         enabled = true,
       },
-      separator = {left = ' ', right = ' '},
+      separator = {left = '', right = ''},
       separator_at_end = false,
       modified = {button = '●'},
       pinned = {button = '', filename = true},

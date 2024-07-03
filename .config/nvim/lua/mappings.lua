@@ -5,8 +5,8 @@ local unmap = vim.keymap.del
 -- basic mappings
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
 map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard" })
-map({"n", "v"}, "J", "jzz")
-map({"n", "v"}, "K", "kzz")
+map({"n", "v"}, "J", "jzz", { desc = "Scroll down" })
+map({"n", "v"}, "K", "kzz", { desc = "Scroll up" })
 -- map("i", "jk", "<ESC>")
 -- map("i", "<Enter>", "<CR>")
 map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
@@ -58,8 +58,10 @@ map('n', '<leader>fc', '<cmd> Neotree current <cr>', { desc = " Toggle filetr
 
 -- buffers
 map("n", "<leader>q", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
-map("n", "<leader>J", "<cmd> BufferPrevious <cr>", { desc = " Goto previous buffer" })
-map("n", "<leader>K", "<cmd> BufferNext <cr>", { desc = " Goto previous buffer" })
+map("n", "<leader>H", "<cmd> BufferPrevious <cr>", { desc = " Goto previous buffer" })
+map("n", "<leader>L", "<cmd> BufferNext <cr>", { desc = " Goto previous buffer" })
+map("n", "<leader>J", "<cmd> BufferFirst <cr>", { desc = " Goto first buffer" })
+map("n", "<leader>K", "<cmd> BufferLast <cr>", { desc = " Goto last buffer" })
 map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
 map("n", "<leader>p", "<cmd> BufferPin<cr>", { desc = " Pin current buffer" })
 
