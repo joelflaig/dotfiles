@@ -5,14 +5,15 @@ local unmap = vim.keymap.del
 -- basic mappings
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
 map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard" })
-map({"n", "v"}, "J", "jzz", { desc = "Scroll down" })
-map({"n", "v"}, "K", "kzz", { desc = "Scroll up" })
 -- map("i", "jk", "<ESC>")
 -- map("i", "<Enter>", "<CR>")
 map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
 map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save"})
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
 map("n", "9", "^", { desc = "Jump to first non-white" })
+-- remap motion to scroll
+map({"n", "v"}, "j", "jzz", { desc = "Scroll down" })
+map({"n", "v"}, "k", "kzz", { desc = "Scroll up" })
 
 -- buffer nav
 map('n', "<leader>w", "<C-w>")
