@@ -66,3 +66,6 @@ map("n", "<leader>K", "<cmd> BufferLast <cr>", { desc = " Goto last buffer
 map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
 map("n", "<leader>p", "<cmd> BufferPin<cr>", { desc = " Pin current buffer" })
 
+-- outline
+map("n", "<leader>s", "<cmd> SymbolsOutline <cr>", { desc = "Toggle Outline" })
+
