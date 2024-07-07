@@ -34,7 +34,7 @@ eval $(thefuck --alias)
 eval $(thefuck --alias FUCK)
 eval $(thefuck --alias fk)
 
-tmux
+tmux && q
 clear
 city
 
