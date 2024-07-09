@@ -1,5 +1,5 @@
 return {
-  'simrat39/symbols-outline.nvim',
+  'joelflaig/symbols-outline.nvim',
   lazy = false,
   opts = {
     highlight_hovered_item = true,

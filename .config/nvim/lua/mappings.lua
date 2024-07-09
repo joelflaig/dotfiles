@@ -12,8 +12,8 @@ map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save"})
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
 map("n", "9", "^", { desc = "Jump to first non-white" })
 -- remap motion to scroll
-map({"n", "v"}, "j", "jzz", { desc = "Scroll down" })
-map({"n", "v"}, "k", "kzz", { desc = "Scroll up" })
+map({"n", "v"}, "<Down>", "jzz", { desc = "Scroll down" })
+map({"n", "v"}, "<Up>", "kzz", { desc = "Scroll up" })
 
 -- buffer nav
 map('n', "<leader>w", "<C-w>")

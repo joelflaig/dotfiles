@@ -40,7 +40,7 @@
   "persistence.nvim": { "branch": "main", "commit": "a93748acdb2e7bc4389b3738b4c787b764c3b2a6" },
   "plenary.nvim": { "branch": "master", "commit": "a3e3bc82a3f95c5ed0d7201546d5d2c19b20d683" },
   "promise-async": { "branch": "main", "commit": "28c1d5a295eb5310afa2523d4ae9aa41ec5a9de2" },
-  "symbols-outline.nvim": { "branch": "master", "commit": "564ee65dfc9024bdde73a6621820866987cbb256" },
+  "symbols-outline.nvim": { "branch": "master", "commit": "1f5dc23f3e03860e2160c7b89ae4271f9b0b7df3" },
   "telescope.nvim": { "branch": "master", "commit": "bfcc7d5c6f12209139f175e6123a7b7de6d9c18a" },
   "trouble.nvim": { "branch": "main", "commit": "4453fea6bb597830fbd58d2c484612f37b97bd8c" },
   "ui": { "branch": "v2.5", "commit": "6381d4081e4316152b416e407e9d00d53bcb0439" },
