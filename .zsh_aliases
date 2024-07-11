@@ -2,7 +2,7 @@
 alias :q=exit
 alias ;q=exit
 alias q=exit
-alias x=exit
+alias x="tmux kill-server"
 alias ez='exec zsh'
 alias t=touch
 alias md=mkdir

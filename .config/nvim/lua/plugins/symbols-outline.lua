@@ -52,7 +52,7 @@ return {
       Number = { icon = "", hl = "@number" },
       Boolean = { icon = "", hl = "@boolean" },
       Array = { icon = "", hl = "@constant" },
-      Object = { icon = "⦿", hl = "@type" },
+      Object = { icon = "", hl = "@type" },
       Key = { icon = "󰌋", hl = "@type" },
       Null = { icon = "󰟢", hl = "@type" },
       EnumMember = { icon = "󰎦", hl = "@field" },

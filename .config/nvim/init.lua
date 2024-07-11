@@ -57,8 +57,14 @@ require("lazy").setup("plugins", lazy_config)
 -- lspconfig load
 require("configs.lspconf")
 
+-- dapconfig load
+require("configs.dapconf")
+
+-- startup commands load
+require("configs.startup")
+
 -- colorscheme
-vim.cmd "colorscheme catppuccin"
+vim.cmd "colorscheme catppuccin-mocha"
 
 -- dashboard
 vim.api.nvim_set_hl(0, "DashboardHeader", { fg = "#5f5f5f" })

@@ -7,6 +7,8 @@ local servers = {
   "html",
   "lua_ls",
   "cssls",
+  "clangd",
+  "rust_analyzer",
   "mojo",
 }
 
@@ -31,12 +33,24 @@ mason.setup({
   }
 })
 
+-- LSP settings (for overriding per client)
+local handlers =  {
+  ["textDocument/hover"] =  vim.lsp.with(vim.lsp.handlers.hover, {border = "rounded"}),
+  ["textDocument/signatureHelp"] =  vim.lsp.with(vim.lsp.handlers.signature_help, {border = "rounded"}),
+}
+
+-- diagnostics window
+vim.diagnostic.config {
+  float = { border = "rounded" },
+}
+
 -- lsps with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     on_init = on_init,
     capabilities = capabilities,
+    handlers = handlers,
   }
 end
 
