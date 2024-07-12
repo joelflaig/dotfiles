@@ -53,7 +53,7 @@ map('n', '<leader>b<space>', require 'dap'.continue)
 map('n', '<leader>bl', require 'dap'.step_over)
 map('n', '<leader>bj', require 'dap'.step_into)
 map('n', '<leader>bk', require 'dap'.step_out)
-map('n', '<leader>b', require 'dap'.toggle_breakpoint)
+map('n', '<leader>bp', require 'dap'.toggle_breakpoint)
 map('n', '<leader>be', require("dapui").eval)
 map('n', '<leader>bf', require("dapui").float_element)
 
