@@ -11,7 +11,11 @@ map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
 map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save and quit"})
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
 map("n", ")", "^", { desc = "Jump to first non-white" })
--- remap motion to scroll
+
+-- Notifications
+map("n", "<leader>nd", "<cmd> Noice dismiss <cr>", { desc = "Dismiss Notifications" })
+
+-- map scroll
 map({"n", "v"}, "<Down>", "jzz", { desc = "Scroll down" })
 map({"n", "v"}, "<Up>", "kzz", { desc = "Scroll up" })
 

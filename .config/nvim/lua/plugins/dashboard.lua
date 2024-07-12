@@ -49,6 +49,7 @@ return {
           { action = "Neotree", desc = " open filetree", icon = " ", key = "t" },
           { action = 'lua require("persistence").load({ last = true })', desc = " last session", icon = " ", key = "s" },
           { action = 'lua require("persistence").load()', desc = " cwd session", icon = " ", key = "c" },
+          { action = "Neotree ~/dotfiles/.config/nvim", desc = " open config", icon = " ", key = "o" },
           { action = "Lazy", desc = " lazy", icon = "󰒲 ", key = "l" },
           { action = "qa", desc = " quit", icon = " ", key = "q" },
         },
