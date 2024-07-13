@@ -67,9 +67,47 @@ vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSi
 vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo", numhl = "" })
 vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint", numhl = "" })
 
+local cmp_kinds = {
+  Text = "󰉿",
+  Method = "󰆧",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "󰜢",
+  Variable = "",
+  Class = "",
+  Interface = "",
+  Module = "",
+  Property = "󰜢",
+  Unit = "󰑭",
+  Value = "󰎠",
+  Enum = "",
+  Keyword = "󰌋",
+  Snippet = "",
+  Color = "󰏘",
+  File = "",
+  Reference = "",
+  Folder = "󰉋",
+  EnumMember = "󰎦",
+  Constant = "󰏿",
+  Struct = "",
+  Event = "⚡",
+  Operator = "",
+  TypeParameter = "",
+  Codeium = "",
+}
+
 local cmp = require 'cmp'
 
 cmp.setup{
+
+  formatting = {
+    expandable_indicator = true,
+    format = function(_, vim_item)
+      vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. " " .. vim_item.kind
+      return vim_item
+    end,
+  },
+
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
