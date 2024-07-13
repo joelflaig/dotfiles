@@ -27,15 +27,18 @@ local bubbles_theme = {
 		z = { fg = colors.black, bg = colors.blue},
   },
 
-  insert = { a = { fg = colors.black, bg = colors.pink} },
-  visual = { a = { fg = colors.black, bg = colors.cyan } },
-  replace = { a = { fg = colors.black, bg = colors. orange} },
-  command = { a = { fg = colors.black, bg = colors.green } },
+  insert = { a = { fg = colors.black, bg = colors.pink}, z = { fg = colors.black, bg = colors.pink} },
+  visual = { a = { fg = colors.black, bg = colors.cyan }, z = { fg = colors.black, bg = colors.cyan } },
+  replace = { a = { fg = colors.black, bg = colors. orange}, z = { fg = colors.black, bg = colors. orange} },
+  command = { a = { fg = colors.black, bg = colors.green }, z = { fg = colors.black, bg = colors.green } },
 
   inactive = {
     a = { fg = colors.white },
     b = { fg = colors.white, bg = colors.black },
     c = { fg = colors.white, bg = colors.black },
+    x = { fg = colors.white, bg = colors.black },
+    y = { fg = colors.white, bg = colors.black },
+    z = { fg = colors.white },
   },
 }
 
@@ -114,7 +117,7 @@ return {
 		sections = {
 
 			lualine_a = {
-				{ shortmode, icon = '', separator = seps },
+				{ shortmode, icon = '󰀘', separator = seps },
 				{ macro, icon = '', separator = seps },
 			},
 
@@ -168,9 +171,9 @@ return {
 
 			lualine_z = {
 				{
-			  	function()
-			  		return vim.fn.line '.'
-			  	end,
+          function()
+            return vim.fn.line '.'
+          end,
 					separator = seps,
         }
 			},

@@ -6,7 +6,8 @@ config:
 
 icons:
   zsh: "" # overwrite with your own symbol (Nerd Font icon, emoji, whatever!)
-  nvim: ""
+  vim: ""
+  nvim: ""
   python3: ""
   yazi: "🦆"
   spt: 󰓇
