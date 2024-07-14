@@ -63,6 +63,9 @@ require("configs.dapconf")
 -- startup commands load
 require("configs.startup")
 
+-- indent config load
+require("configs.indent")
+
 -- colorscheme
 vim.cmd "colorscheme catppuccin-mocha"
 
