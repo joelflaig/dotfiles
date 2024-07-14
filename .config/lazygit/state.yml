@@ -1,10 +1,11 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/init
+    - /home/joel/programming/rust/nerd-fight
     - /home/joel/programming/cpp/Nerd-fight
     - /home/joel/programming/nvim/symbols-outline.nvim
     - /home/joel/programming/cpp/grace
-    - /home/joel/init
 startuppopupversion: 5
 lastversion: 0.42.0
 customcommandshistory: []
