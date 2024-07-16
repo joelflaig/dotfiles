@@ -2,22 +2,33 @@
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
--- basic mappings
+-- remap command mode enter
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
+
+-- dashboard -whyever
 map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard" })
 -- map("i", "jk", "<ESC>")
 -- map("i", "<Enter>", "<CR>")
-map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save"})
-map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save and quit"})
+
+-- basic mappings
+map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save" })
+map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save and quit" })
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
 map("n", ")", "^", { desc = "Jump to first non-white" })
+
+-- greatest remap ever - ThePrimeagen
+map("n", "<leader>p", "\"_dP")
 
 -- Notifications
 map("n", "<leader>nd", "<cmd> Noice dismiss <cr>", { desc = "Dismiss Notifications" })
 
--- map scroll
+-- scroll
 map({"n", "v"}, "<Down>", "jzz", { desc = "Scroll down" })
 map({"n", "v"}, "<Up>", "kzz", { desc = "Scroll up" })
+
+-- split
+map("n", "<leader>v", "<C-w>v", { desc = "Split vertically" })
+map("n", "<leader>S", "<C-w>s", { desc = "Split horizontally" })
 
 -- buffer nav
 map('n', "<leader>w", "<C-w>")
@@ -33,12 +44,13 @@ map('n', "<M-k>", "<C-w>-")
 map('n', "<M-l>", "<C-w>>")
 
 -- telescope mappings
-map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true <cr>', { desc = " Open telescope" })
+map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true', { desc = " Open telescope" })
 map('n', '<leader>ff', '<cmd> Telescope find_files hidden=true no_ignore=true <cr>', { desc = " Find files" })
 map('n', '<leader>fg', '<cmd> Telescope live_grep hidden=true no_ignore=true <cr>', { desc = " Find text" })
 map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>', { desc = " Find buffers" })
 map('n', '<leader>fh', '<cmd> Telescope help_tags hidden=true no_ignore=true <cr>', { desc = " Find help" })
 map('n', '<leader>fr', '<cmd> Telescope oldfiles hidden=true no_ignore=true <cr>', { desc = "󰑐 Find old files"})
+map('n', '<leader>fc', '<cmd> Telescope current_buffer_fuzzy_find <cr>') -- current buffer
 
 -- gitsigns
 map('n', '<leader>tlb', '<cmd> Gitsigns toggle_current_line_blame <cr>', { desc = "Toggle git blame" })
@@ -59,7 +71,7 @@ map('n', '<leader>bf', require("dapui").float_element)
 
 -- filetree
 map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetree"})
-map('n', '<leader>fc', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
+map('n', '<leader>tf', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
 
 -- buffers
 map("n", "<leader>q", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
@@ -68,7 +80,6 @@ map("n", "<leader>L", "<cmd> BufferNext <cr>", { desc = " Goto previous buffe
 map("n", "<leader>J", "<cmd> BufferFirst <cr>", { desc = " Goto first buffer" })
 map("n", "<leader>K", "<cmd> BufferLast <cr>", { desc = " Goto last buffer" })
 map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
-map("n", "<leader>p", "<cmd> BufferPin<cr>", { desc = " Pin current buffer" })
 
 -- outline
 map("n", "<leader>s", "<cmd> SymbolsOutline <cr>", { desc = "Toggle Outline" })
