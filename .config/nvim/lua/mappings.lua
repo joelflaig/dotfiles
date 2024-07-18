@@ -70,8 +70,8 @@ map('n', '<leader>be', require("dapui").eval)
 map('n', '<leader>bf', require("dapui").float_element)
 
 -- filetree
-map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetree"})
-map('n', '<leader>tf', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
+-- map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetree"})
+map('n', '<leader>ft', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
 
 -- buffers
 map("n", "<leader>q", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
