@@ -97,10 +97,16 @@ local cmp_kinds = {
 }
 
 local cmp = require 'cmp'
+local luasnip = require "luasnip"
 
 cmp.setup{
 
   formatting = {
+    fields = {
+      'abbr',
+      'kind',
+      'menu'
+    },
     expandable_indicator = true,
     format = function(_, vim_item)
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. " " .. vim_item.kind
@@ -120,20 +126,49 @@ cmp.setup{
   },
 
   mapping = cmp.mapping.preset.insert({
-      ["<Tab>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
-      ["<S-Tab>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        elseif luasnip.locally_jumpable(1) then
+          luasnip.jump(1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
+
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+        elseif luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { "i", "s" }),
+
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+      ['<CR>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          if luasnip.expandable() then
+            luasnip.expand()
+          else
+            cmp.confirm({select = true,})
+          end
+        else
+            fallback()
+        end
+      end),
     }),
 
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
-    {name = "luasnip"},
-    {name = "codeium"},
+    { name = "luasnip" },
+    { name = "codeium" },
   },
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
@@ -152,7 +187,14 @@ cmp.setup{
     }, {
       { name = 'cmdline' }
     }),
-    matching = { disallow_symbol_nonprefix_matching = false }
+    matching = {
+      disallow_symbol_nonprefix_matching = false,
+      disallow_fuzzy_matching = false,
+      disallow_partial_matching = false,
+      disallow_prefix_unmatching = false,
+      disallow_fullfuzzy_matching = false,
+      disallow_partial_fuzzy_matching = false,
+    }
   }),
 }
 

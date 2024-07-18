@@ -1,9 +1,9 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/programming/rust/nerd-fight
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/init
-    - /home/joel/programming/rust/nerd-fight
     - /home/joel/programming/cpp/Nerd-fight
     - /home/joel/programming/nvim/symbols-outline.nvim
     - /home/joel/programming/cpp/grace
