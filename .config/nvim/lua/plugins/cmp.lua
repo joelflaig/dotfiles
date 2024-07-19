@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
+    "saadparwaiz1/cmp_luasnip",
     "neovim/nvim-lspconfig",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
