@@ -96,6 +96,14 @@ local cmp_kinds = {
   Codeium = "",
 }
 
+-- if the stating the icon in the cmp_kinds table does not work, use this
+-- you also have to write a block in the format function
+local override_icons = {
+  calc = "",
+  emoji = "",
+  nerdfont = "",
+}
+
 local cmp = require 'cmp'
 local luasnip = require "luasnip"
 
@@ -108,7 +116,23 @@ cmp.setup{
       'menu'
     },
     expandable_indicator = true,
-    format = function(_, vim_item)
+    format = function(entry, vim_item)
+
+      -- for calc
+      if entry.source.name == "calc" then
+        vim_item.kind = override_icons.calc
+      end
+
+      -- for emoji
+      if entry.source.name == "emoji" then
+        vim_item.kind = override_icons.emoji
+      end
+
+      -- for nerdfont
+      if entry.source.name == "nerdfont" then
+        vim_item.kind = override_icons.nerdfont
+      end
+
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. " " .. vim_item.kind
       return vim_item
     end,
@@ -151,6 +175,9 @@ cmp.setup{
     { name = "nvim_lsp_signature_help" },
     { name = "luasnip" },
     { name = "codeium" },
+    { name = 'calc' },
+    { name = 'emoji' },
+    { name = 'nerdfont' },
   },
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
