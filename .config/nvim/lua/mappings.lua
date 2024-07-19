@@ -50,8 +50,7 @@ map('n', '<leader>fg', '<cmd> Telescope live_grep hidden=true no_ignore=true <cr
 map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>', { desc = " Find buffers" })
 map('n', '<leader>fh', '<cmd> Telescope help_tags hidden=true no_ignore=true <cr>', { desc = " Find help" })
 map('n', '<leader>fr', '<cmd> Telescope oldfiles hidden=true no_ignore=true <cr>', { desc = "󰑐 Find old files"})
-map('n', '<leader>fc', '<cmd> Telescope current_buffer_fuzzy_find <cr>') -- current buffer
-
+map('n', '<leader>fc', '<cmd> Telescope current_buffer_fuzzy_find <cr>', { desc = " Find in current buffer" })
 -- gitsigns
 map('n', '<leader>tlb', '<cmd> Gitsigns toggle_current_line_blame <cr>', { desc = "Toggle git blame" })
 

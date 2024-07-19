@@ -117,7 +117,6 @@ cmp.setup{
     },
     expandable_indicator = true,
     format = function(entry, vim_item)
-
       -- for calc
       if entry.source.name == "calc" then
         vim_item.kind = override_icons.calc
@@ -131,6 +130,11 @@ cmp.setup{
       -- for nerdfont
       if entry.source.name == "nerdfont" then
         vim_item.kind = override_icons.nerdfont
+      end
+
+      local item = entry:get_completion_item()
+      if item.detail then
+        vim_item.menu = " " .. item.detail 
       end
 
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. " " .. vim_item.kind
