@@ -93,7 +93,7 @@ local cmp_kinds = {
   Event = "⚡",
   Operator = "",
   TypeParameter = "",
-  Codeium = "",
+  Codeium = "",-- ""; -- "",
 }
 
 -- if the stating the icon in the cmp_kinds table does not work, use this
@@ -117,6 +117,9 @@ cmp.setup{
     },
     expandable_indicator = true,
     format = function(entry, vim_item)
+      -- override icons highlights
+      vim.cmd.hi("CmpItemKindCodeium guifg = #16eeb8")
+
       -- for calc
       if entry.source.name == "calc" then
         vim_item.kind = override_icons.calc
@@ -132,10 +135,13 @@ cmp.setup{
         vim_item.kind = override_icons.nerdfont
       end
 
+      -- return values with lsp
       local item = entry:get_completion_item()
       if item.detail then
-        vim_item.menu = " " .. item.detail 
+        vim_item.menu = " " .. item.detail
       end
+      -- highlight return values (sadly no lsp possible)
+      vim.cmd.hi("CmpItemMenu guifg = #f9e2af")
 
       vim_item.kind = (cmp_kinds[vim_item.kind] or '') .. " " .. vim_item.kind
       return vim_item
