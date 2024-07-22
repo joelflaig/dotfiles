@@ -12,6 +12,7 @@ return {
       exclude_filetypes = {
         "help",
         "dashboard",
+        "",
       },
 
       exclude_buftypes = {
