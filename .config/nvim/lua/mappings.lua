@@ -73,7 +73,7 @@ map('n', '<leader>bf', require("dapui").float_element)
 map('n', '<leader>ft', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
 
 -- buffers
-map("n", "<leader>q", "<cmd> BufferClose <cr>", { desc = " Close current buffer" })
+map("n", "<leader>q", "<cmd> bdelete <cr>", { desc = " Close current buffer" })
 map("n", "<leader>H", "<cmd> BufferPrevious <cr>", { desc = " Goto previous buffer" })
 map("n", "<leader>L", "<cmd> BufferNext <cr>", { desc = " Goto previous buffer" })
 map("n", "<leader>J", "<cmd> BufferFirst <cr>", { desc = " Goto first buffer" })
@@ -81,5 +81,8 @@ map("n", "<leader>K", "<cmd> BufferLast <cr>", { desc = " Goto last buffer
 map("n", "<leader>e", "<cmd> e no name <cr>", { desc = " Create new buffer" })
 
 -- outline
-map("n", "<leader>s", "<cmd> SymbolsOutline <cr>", { desc = "Toggle Outline" })
+map("n", "<leader>so", "<cmd> SymbolsOutline <cr>", { desc = "Toggle Outline" })
+
+-- sidebar
+map("n", "<leader>sb", "<cmd> SidebarNvimToggle <cr>", { desc = "Toggle sidebar" })
 
