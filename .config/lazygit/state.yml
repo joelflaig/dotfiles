@@ -1,5 +1,6 @@
 lastupdatecheck: 0
 recentrepos:
+    - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
     - /home/joel/dotfiles
     - /home/joel/init
     - /home/joel/programming/rust/nerd-fight
