@@ -86,3 +86,7 @@ map("n", "<leader>so", "<cmd> SymbolsOutline <cr>", { desc = "Toggle Outline" })
 -- sidebar
 map("n", "<leader>sb", "<cmd> SidebarNvimToggle <cr>", { desc = "Toggle sidebar" })
 
+-- dropbar
+map("n", "<leader>dp", function() require('dropbar.api').pick() end, { desc = " Pick dropbar" })
+map("n", "<leader>df", function() require("dropbar.menu").dropbar_menu_t:fuzzy_find_open() end,{ desc = " Fuzzy pick dropbar" })
+

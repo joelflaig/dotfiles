@@ -1,13 +1,13 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/programming/cpp/grace
     - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
     - /home/joel/init
     - /home/joel/programming/rust/nerd-fight
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/programming/cpp/Nerd-fight
     - /home/joel/programming/nvim/symbols-outline.nvim
-    - /home/joel/programming/cpp/grace
 startuppopupversion: 5
 lastversion: 0.42.0
 customcommandshistory: []
