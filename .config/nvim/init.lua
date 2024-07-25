@@ -22,7 +22,7 @@ vim.cmd.set('ls=3')
 -- fold
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
-vim.o.foldcolumn = '5'
+vim.o.foldcolumn = 'auto:9'
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 -- nerd font
