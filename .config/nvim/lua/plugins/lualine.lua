@@ -154,6 +154,15 @@ return {
 			},
 
 			lualine_x = {
+        {
+          function ()
+            local lsp = vim.lsp.get_clients({
+              bufnr = 0
+            })
+            return lsp[1].name
+          end,
+          icon = '',
+        },
 			  {
 				  'diagnostics',
           sources = { 'nvim_diagnostic' },

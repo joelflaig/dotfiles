@@ -33,6 +33,8 @@ vim.opt.termguicolors = true
 vim.cmd.highlight('IndentLine guifg=#767676')
 -- Current indent line highlight
 vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
+-- cursorline
+vim.o.cursorline = true
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

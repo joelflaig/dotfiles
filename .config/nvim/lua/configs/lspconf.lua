@@ -10,6 +10,7 @@ local servers = {
   "clangd",
   "rust_analyzer",
   "mojo",
+  "pylsp",
 }
 
 mason_lspconfig.setup {
@@ -30,6 +31,7 @@ mason.setup({
   ensure_installed = {
     "lua_language_server",
     "rust_analyzer",
+    "python",
   }
 })
 

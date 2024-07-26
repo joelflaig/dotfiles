@@ -19,7 +19,7 @@ return {
           -- local utils = require('dropbar.utils')
           if vim.bo[buf].ft == 'markdown' then
             return {
-              sources.path,
+              -- sources.path,
               sources.markdown,
             }
           end
@@ -103,7 +103,7 @@ return {
             String = '󰉾 ',
             Struct = ' ',
             SwitchStatement = '󰺟 ',
-            Terminal = ' ',
+            Terminal = '',
             Text = '󰉿 ',
             Type = ' ',
             TypeParameter = '󰆩 ',

@@ -12,6 +12,7 @@ alias matrix="cmatrix -u 5"
 alias city="zsh ~/dotfiles/city.sh"
 alias cc='zsh ~/dotfiles/cat.sh'
 alias c="clear && city"
+alias v=nvim
 
 # configuration aliases
 alias cfg='nvim ~/dotfiles/.zshrc'

@@ -4,6 +4,10 @@ return {
   opts = function()
 
     local city =
+"          The more you know, the more you hurt;         \n"..
+"      the more you understand, the more you suffer.     \n"..
+"                --- Ecclasiates 1, 18 ---               \n"..
+"\n"..
 "               .                   .     .              \n"..
 "   +                    │      ;                 +      \n"..
 "                .      ╭╯╮   --+- -                     \n"..
@@ -29,7 +33,7 @@ return {
 
     local logo = city
 
-    logo = string.rep("\n", 6) .. logo .. "\n\n"
+    logo = string.rep("\n", 3) .. logo .. "\n\n"
 
     local opts = {
       theme = "doom",
