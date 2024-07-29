@@ -1,10 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/init
     - /home/joel/programming/cpp/grace
     - /home/joel/.local/share/nvim/lazy/dropbar.nvim
     - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
-    - /home/joel/init
     - /home/joel/programming/rust/nerd-fight
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/programming/cpp/Nerd-fight

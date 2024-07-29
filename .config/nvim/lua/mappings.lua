@@ -32,10 +32,10 @@ map("n", "<leader>S", "<C-w>s", { desc = "Split horizontally" })
 
 -- buffer nav
 map('n', "<leader>w", "<C-w>")
-map('n', "<C-h>", "<C-w>h")
-map('n', "<C-j>", "<C-w>j")
-map('n', "<C-k>", "<C-w>k")
-map('n', "<C-l>", "<C-w>l")
+-- map('n', "<C-h>", "<C-w>h")
+-- map('n', "<C-j>", "<C-w>j")
+-- map('n', "<C-k>", "<C-w>k")
+-- map('n', "<C-l>", "<C-w>l")
 
 -- buffer resize
 map('n', "<M-h>", "<C-w><")

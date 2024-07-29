@@ -50,7 +50,7 @@ return {
           { action = "Telescope find_files hidden=true no_ignore=true", desc = " find file", icon = "󰱼 ", key = "f" },
           { action = "Telescope oldfiles hidden=true no_ignore=true", desc = " recent files", icon = "󰑐 ", key = "r" },
           { action = "Telescope live_grep hidden=true no_ignore=true", desc = " find text", icon = "󰺮 ", key = "g" },
-          { action = "Neotree", desc = " open filetree", icon = " ", key = "t" },
+          { action = "Neotree current", desc = " open filetree", icon = " ", key = "t" },
           { action = 'lua require("persistence").load({ last = true })', desc = " last session", icon = " ", key = "s" },
           { action = 'lua require("persistence").load()', desc = " cwd session", icon = " ", key = "c" },
           { action = "Neotree ~/dotfiles/.config/nvim", desc = " open config", icon = " ", key = "o" },
