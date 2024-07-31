@@ -56,7 +56,33 @@ return {
         example = { raw = '[!EXAMPLE]', rendered = '󰉹 Example', highlight = 'RenderMarkdownHint' },
         quote = { raw = '[!QUOTE]', rendered = '󱆨 Quote', highlight = 'RenderMarkdownQuote' },
       },
-
+      bullet = {
+        icons = { '●', '○', '◆', '◇' },
+        -- Padding to add to the right of bullet point
+        right_pad = 1,
+      },
+      checkbox = {
+        -- Turn on / off checkbox state rendering
+        enabled = true,
+        unchecked = {
+          -- Replaces '[ ]' of 'task_list_marker_unchecked'
+          icon = '󰄱 ',
+          -- Highlight for the unchecked icon
+          highlight = 'RenderMarkdownUnchecked',
+        },
+        checked = {
+          -- Replaces '[x]' of 'task_list_marker_checked'
+          icon = ' ',
+          -- Highligh for the checked icon
+          highlight = 'RenderMarkdownChecked',
+        },
+        custom = {
+          todo = { raw = '[-]', rendered = '󰥔 ', highlight = 'RenderMarkdownTodo' },
+          r_arrow = { raw = "[>]", rendered = "", highlight = "ObsidianRightArrow" },
+          tilde = { raw = "[~]", rendered = "󰰱", highlight = "ObsidianTilde" },
+          important = { raw = "[!]", rendered = "", highlight = "ObsidianImportant" },
+        },
+      },
     })
   end,
 }

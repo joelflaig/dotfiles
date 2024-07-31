@@ -14,7 +14,8 @@ recentrepos:
     - /home/joel/programming/nvim/symbols-outline.nvim
 startuppopupversion: 5
 lastversion: 0.43.1
-customcommandshistory: []
+customcommandshistory:
+    - 'nvim: Added markdown render bullets and checkboxes'
 hidecommandlog: false
 ignorewhitespaceindiffview: false
 diffcontextsize: 3
