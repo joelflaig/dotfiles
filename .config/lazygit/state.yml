@@ -1,9 +1,10 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/.local/share/nvim/lazy/ChatGPT.nvim
+    - /home/joel/vaults/Personal
     - /home/joel/vaults/Klasse
     - /home/joel/vaults/Grace
-    - /home/joel/vaults/Personal
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/init
     - /home/joel/programming/cpp/grace

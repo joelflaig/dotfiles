@@ -37,6 +37,23 @@ vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
 vim.o.cursorline = true
 -- conceal
 vim.wo.conceallevel = 2
+-- readable line length (obsidian)
+vim.cmd("hi ColorColumn guibg=#222335")
+
+vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" },{
+  pattern = { "*.md" },
+  callback = function (_)
+    vim.o.cc = "65"
+    vim.cmd("hi ColorColumn guibg=#222335")
+  end
+})
+
+vim.api.nvim_create_autocmd({ "BufLeave", "BufWinLeave" },{
+  pattern = { "*.md" },
+  callback = function (_)
+    vim.o.cc = ""
+  end
+})
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

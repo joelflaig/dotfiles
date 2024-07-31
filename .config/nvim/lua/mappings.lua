@@ -1,6 +1,7 @@
 -- mapping shortcuts
 local map = vim.keymap.set
 local unmap = vim.keymap.del
+local wk = require("which-key")
 
 -- remap command mode enter
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
@@ -11,7 +12,7 @@ map("n", "<leader>dd", "<cmd> Dashboard <cr>", { desc = "󰕮 Display Dashboard"
 -- map("i", "<Enter>", "<CR>")
 
 -- basic mappings
-map("n", "<leader>w", "<cmd> wa <cr>", { desc = " Save" })
+map("n", "<leader>w<cr>", "<cmd> wa <cr>", { desc = " Save" })
 map("n", "<leader>wq", "<cmd> wqa <cr>", { desc = " Save and quit" })
 map("n", "<leader>l", "<cmd> Lazy <cr>", { desc = "󰒲 Open Lazy" })
 map("n", ")", "^", { desc = "Jump to first non-white" })
@@ -44,7 +45,7 @@ map('n', "<M-k>", "<C-w>-")
 map('n', "<M-l>", "<C-w>>")
 
 -- telescope mappings
-map('n', '<leader>tel', '<cmd> Telescope hidden=true no_ignore=true', { desc = " Open telescope" })
+map('n', '<leader>f<cr>', '<cmd> Telescope hidden=true no_ignore=true', { desc = " Open telescope" })
 map('n', '<leader>ff', '<cmd> Telescope find_files hidden=true no_ignore=true <cr>', { desc = " Find files" })
 map('n', '<leader>fg', '<cmd> Telescope live_grep hidden=true no_ignore=true <cr>', { desc = " Find text" })
 map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>', { desc = " Find buffers" })
