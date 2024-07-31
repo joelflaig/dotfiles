@@ -1,5 +1,5 @@
 return {
-  "ThePrimeagen/harpoon",
+  "joelflaig/harpoon",
   branch = "harpoon2",
   dependencies = { "nvim-lua/plenary.nvim" },
   lazy = false,
