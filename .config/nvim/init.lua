@@ -35,6 +35,8 @@ vim.cmd.highlight('IndentLine guifg=#767676')
 vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
 -- cursorline
 vim.o.cursorline = true
+-- conceal
+vim.wo.conceallevel = 2
 
 -- lazy
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
