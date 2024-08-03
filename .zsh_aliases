@@ -13,6 +13,8 @@ alias city="zsh ~/dotfiles/city.sh"
 alias cc='zsh ~/dotfiles/cat.sh'
 alias c="clear && city"
 alias v=nvim
+alias uid="cat /etc/passwd"
+alias secret="zsh ~/dotfiles/secrets/secret.sh"
 
 # configuration aliases
 alias cfg='nvim ~/dotfiles/.zshrc'
