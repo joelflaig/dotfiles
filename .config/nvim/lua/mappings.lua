@@ -61,17 +61,20 @@ map('n', 'zM', require('ufo').closeAllFolds)
 
 -- debug
 map('n', '<leader>db', require "dapui".toggle, { desc = " Toggle debugger" })
-map('n', '<leader>b<space>', require 'dap'.continue)
-map('n', '<leader>bl', require 'dap'.step_over)
-map('n', '<leader>bj', require 'dap'.step_into)
-map('n', '<leader>bk', require 'dap'.step_out)
-map('n', '<leader>bp', require 'dap'.toggle_breakpoint)
-map('n', '<leader>be', require("dapui").eval)
-map('n', '<leader>bf', require("dapui").float_element)
+map('n', '<leader>b<space>', require 'dap'.continue, { desc = " Continue" })
+map('n', '<leader>bl', require 'dap'.step_over, { desc = " Step over" })
+map('n', '<leader>bj', require 'dap'.step_into, { desc = " Step into" })
+map('n', '<leader>bk', require 'dap'.step_out, { desc = " Step out" })
+map('n', '<leader>bp', require 'dap'.toggle_breakpoint, { desc = " Toggle breakpoint" })
+map('n', '<leader>be', require("dapui").eval, { desc = " Evaluate expression" })
+map('n', '<leader>bf', require("dapui").float_element, { desc = " Open in float" })
 
--- filetree
+-- neotree
 -- map('n', '<leader>ft', '<cmd> Neotree toggle <cr>', { desc = " Toggle filetree"})
-map('n', '<leader>ft', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
+map('n', '<leader>tc', '<cmd> Neotree current <cr>', { desc = " Toggle filetree fullscreen"})
+map("n", "<leader>tf", "<cmd> Neotree filesystem <cr>", { desc = " Filesystem" })
+map("n", "<leader>tg", "<cmd> Neotree git_status <cr>", { desc = "󰊢 Git status" })
+map("n", "<leader>tb", "<cmd> Neotree buffers <cr>", { desc = "󰈚 Buffers" })
 
 -- buffers
 map("n", "<leader>q", "<cmd> bdelete <cr>", { desc = " Close current buffer" })

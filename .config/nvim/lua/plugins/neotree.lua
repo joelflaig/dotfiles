@@ -10,6 +10,39 @@ return {
   },
   config = function()
     require("neo-tree").setup ({
+      source_selector = {
+        winbar = true, -- toggle to show selector on winbar
+        statusline = false, -- toggle to show selector on statusline
+        show_scrolled_off_parent_node = true,
+        sources = {
+          {
+            source = "filesystem",
+            display_name = " 󰉓 Files "
+          },
+          {
+            source = "buffers",
+            display_name = " 󰈚 Buffers "
+          },
+          {
+            source = "git_status",
+            display_name = " 󰊢 Git "
+          },
+        },
+        content_layout = "center",
+        tabs_layout = "start",
+        truncation_character = "…",
+        tabs_min_width = nil,
+        tabs_max_width = nil,
+        padding = 0,
+        separator = { left = "", right= "" },
+        separator_active = nil,
+        show_separator_on_edge = false,
+        highlight_tab = "NeoTreeTabInactive",
+        highlight_tab_active = "NeoTreeTabActive",
+        highlight_background = "NeoTreeTabInactive",
+        highlight_separator = "NeoTreeTabActive",
+        highlight_separator_active = "NeoTreeTabActive",
+      },
       close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = "rounded",
       enable_git_status = true,
@@ -17,6 +50,14 @@ return {
       open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
       sort_case_insensitive = false, -- used when sorting files and directories in the tree
         default_component_configs = {
+          diagnostics = {
+            symbols = {
+              error = "",
+              warn = " ",
+              info = " ",
+              hint = "󰌶 ",
+            }
+          },
           container = {
             enable_character_fade = true
           },

@@ -78,8 +78,8 @@ return {
         text = 'undotree',
         align = 'center',
       },
-      ['neo-tree'] = {event = 'BufWipeout'},
-      Outline = {event = 'BufWinLeave', text = 'symbols-outline', align = 'center'},
+      ['neo-tree'] = {event = 'BufWipeout', text = "Explorer", align = 'center'},
+      Outline = {event = 'BufWinLeave', text = 'Outline', align = 'center'},
     },
 
     letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
