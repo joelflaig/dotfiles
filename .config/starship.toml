@@ -16,14 +16,14 @@ palette = 'catppuccin_mocha'
 continuation_prompt = '[ ](bold blue)' # duh
 
 [status]
-format = "[$symbol$status]($style) "
+format = "[](bg)[$symbol$status]($style)[](bg) "
 symbol = "❌"
 success_symbol = ""
 not_executable_symbol = "🚫"
 not_found_symbol = "🔍"
 sigint_symbol = "🧱"
 signal_symbol = "⚡"
-style = "bold red"
+style = "bg:bg fg:red"
 map_symbol = true
 recognize_signal_code = true
 pipestatus = true
@@ -31,20 +31,69 @@ pipestatus_separator = "|"
 disabled = false
 
 [sudo]
-format = "[as $symbol]($style)"
-symbol = "🧙 "
-style = "bold blue"
+format = "[](bg)[$symbol]($style)[](bg) "
+symbol = "🧙"
+style = "bg:bg"
 allow_windows = true
 disabled = false
+
+[username]
+style_user = 'bg:bg fg:blue'
+style_root = 'bg:bg fg:red'
+format = "[](bg)[ $user]($style)[](bg) "
+disabled = false
+show_always = true
 
 [character] # The name of the module we are configuring is 'character'
 success_symbol = '[](bold green)' # The 'success_symbol' segment is being set to '❯' with the color 'bold green'
 error_symbol = "[](bold red)"
 vimcmd_symbol = "[](bold blue)"
-vimcmd_visual_symbol = "[](bold yellow)"
+vimcmd_visual_symbol = "[](bold sky)"
 vimcmd_replace_symbol = "[](bold purple)"
 vimcmd_replace_one_symbol = "[](bold purple)"
 disabled = false
+
+[directory]
+format = "[](blue)[$path]($style)[](blue) "
+truncation_length = 3
+style = "bg:blue fg:bg"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"~" = ""
+"Documents" = "󰈚"
+"Downloads" = ""
+"Music" = "󰎈"
+"Pictures" = ""
+"Projects" = ""
+"Videos" = ""
+
+".config" = ""
+"dotfiles" = "󱗿"
+"test" = ""
+"src" = ""
+"bin" = "󰘨"
+
+"cpp" = ""
+"rust" = ""
+"rs" = ""
+"python" = "󰌠"
+"py" = "󰌠"
+"lua" = ""
+
+"nvim" = ""
+"bat" = "🐱"
+"lazygit" = "󰊢"
+"tmux" = ""
+"yazi" = "🦆"
+
+[cmd_duration]
+min_time = 2000
+format = "[](bg)[󰥔](bg:bg fg:yellow)[ ](bg:yellow fg:bg)[$duration]($style)[](yellow) "
+style = "bg:yellow fg:bg"
+show_milliseconds = false
+disabled = false
+show_notifications = true
 
 [aws]
 symbol = "  "
@@ -53,7 +102,10 @@ symbol = "  "
 symbol = " "
 
 [c]
-symbol = " "
+format = "[](bg)[$symbol]($style)[](fg:bg bg:green)[ $name $version](bg:green fg:bg)[](green) "
+symbol = ""
+style = "bg:bg fg:green"
+detect_extensions = ["c", "h", "cpp"]
 
 [conda]
 symbol = " "
@@ -63,9 +115,6 @@ symbol = " "
 
 [dart]
 symbol = " "
-
-[directory]
-read_only = " 󰌾"
 
 [docker_context]
 symbol = " "
@@ -83,16 +132,38 @@ symbol = " "
 symbol = " "
 
 [git_branch]
-symbol = " "
+symbol = ""
+format = '[󱎕](bg)[$symbol]($style)[](bg:flamingo fg:bg)[ $branch](bg:flamingo fg:bg)[](flamingo) '
+style = "bg:bg fg:flamingo"
+
+[git_status]
+format = '[󱎕](bg)[󰊢](bg:bg fg:red)[ ](bg:red fg:bg)[$all_status$ahead_behind]($style)[](fg:red) '
+style = "bg:red fg:bg"
+stashed = '󰟗'
+ahead = ""
+behind = ""
+up_to_date = ""
+diverged = "󱡷"
+conflicted = ""
+deleted = ""
+renamed = "»"
+modified = ""
+staged = ""
+untracked = "?"
+typechanged = "󰁔"
 
 [golang]
-symbol = " "
+symbol = ""
+format = "[](bg)[$symbol](fg:sky bg:bg)[](fg:bg bg:sky)[ $version]($style)[](sky) "
+style = "fg:bg bg:sky"
 
 [guix_shell]
 symbol = " "
 
 [haskell]
-symbol = " "
+symbol = ""
+format = "[](bg)[$symbol](fg:lavender bg:bg)[](fg:bg bg:lavender)[ $version]($style)[](lavender) "
+style = "fg:bg bg:lavender"
 
 [haxe]
 symbol = " "
@@ -104,7 +175,15 @@ symbol = " "
 ssh_symbol = " "
 
 [java]
-symbol = " "
+symbol = ""
+format = "[](bg)[$symbol](fg:red bg:bg)[](fg:bg bg:red)[ $version]($style)[](red) "
+style = "fg:bg bg:red"
+
+[jobs]
+symbol = ''
+format = "[](bg)[$symbol $number]($style)[](bg) "
+style = "bold bg:bg fg:blue"
+number_threshold = 1
 
 [julia]
 symbol = " "
@@ -113,7 +192,9 @@ symbol = " "
 symbol = " "
 
 [lua]
-symbol = " "
+symbol = ""
+format = "[](bg)[$symbol](fg:blue bg:bg)[](fg:bg bg:blue)[ $version]($style)[](blue) "
+style = "fg:bg bg:blue"
 
 [memory_usage]
 symbol = "󰍛 "
@@ -126,6 +207,8 @@ symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
+format = "[](bg)[$symbol](fg:sapphire bg:bg)[](fg:bg bg:sapphire)[ $version]($style)[](sapphire) "
+style = "fg:bg bg:sapphire"
 
 [nodejs]
 symbol = " "
@@ -143,7 +226,7 @@ Alpine = " "
 AlmaLinux = " "
 Amazon = " "
 Android = " "
-Arch = "󰣇 btw "
+Arch = '󰣇 \(btw\) '
 Artix = " "
 CentOS = " "
 Debian = " "
@@ -183,7 +266,9 @@ Void = " "
 Windows = "󰍲 "
 
 [package]
-symbol = "󰏗 "
+symbol = "📦"
+format = "[](bg)[$symbol](bg:bg)[](fg:bg bg:peach)[ $version]($style)[](peach) "
+style = "fg:bg bg:peach"
 disabled = false
 
 [perl]
@@ -196,7 +281,10 @@ symbol = " "
 symbol = " "
 
 [python]
-symbol = " "
+symbol = ""
+format = '[](bg)[$symbol](fg:yellow bg:bg)[](fg:bg bg:yellow)[ $version \($pyenv_prefix $virtualenv\)]($style)[](yellow) '
+style = "fg:bg bg:yellow"
+pyenv_prefix = ""
 
 [rlang]
 symbol = "󰟔 "
@@ -205,7 +293,9 @@ symbol = "󰟔 "
 symbol = " "
 
 [rust]
-symbol = " "
+symbol = ""
+format = "[](bg)[$symbol](fg:red bg:bg)[](fg:bg bg:red)[ $version]($style)[](red) "
+style = "fg:bg bg:red"
 
 [scala]
 symbol = " "
@@ -243,4 +333,5 @@ surface0 = "#313244"
 base = "#1e1e2e"
 mantle = "#181825"
 crust = "#11111b"
+bg = "#222335"
 

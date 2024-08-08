@@ -8,11 +8,7 @@ recentrepos:
     - /home/joel/vaults/Grace
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/init
-    - /home/joel/programming/cpp/grace
     - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
-    - /home/joel/programming/rust/nerd-fight
-    - /home/joel/programming/cpp/Nerd-fight
-    - /home/joel/programming/nvim/symbols-outline.nvim
 startuppopupversion: 5
 lastversion: 0.43.1
 customcommandshistory:
