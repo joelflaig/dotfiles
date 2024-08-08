@@ -5,6 +5,8 @@ fi
 ### End of Codeium integration
 
 
+
+
 # ~/.profile: executed by the command interpreter for login shells.
 # This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
 # exists.
@@ -35,6 +37,8 @@ fi
 
 
 . "$HOME/.cargo/env"
+
+
 
 
 ### Added by Codeium. These lines cannot be automatically removed if modified

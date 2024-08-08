@@ -100,7 +100,7 @@ local function path ()
 	-- return table.concat(p, "\", #p-1, #p) -- windows (??)
 end
 
-local seps = { left = ' ', right = ' ' }
+local seps = { left = '', right = '' }
 
 return {
 	'nvim-lualine/lualine.nvim',
@@ -117,7 +117,7 @@ return {
 		sections = {
 
 			lualine_a = {
-				{ shortmode, icon = '󰀘', separator = seps },
+				{ shortmode, icon = '󰀘', separator = { left = '', right = ' ' } },
 				{ macro, icon = '', separator = seps },
 			},
 

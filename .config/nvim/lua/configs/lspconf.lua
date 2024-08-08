@@ -84,7 +84,7 @@ local cmp_kinds = {
   Reference = "󰦾",
   Folder = "󰉋",
   EnumMember = "󰎦",
-  Constant = "󰏿",
+  Constant = "",
   Struct = "",
   Event = "⚡",
   Operator = "",
@@ -184,13 +184,15 @@ cmp.setup{
     { name = 'calc' },
     { name = 'emoji' },
     { name = 'nerdfont' },
+    { name = 'path' },
+    { name = 'buffer', keyword_length = 0 }
   },
 
   -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
   cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
-      { name = 'buffer' }
+      { name = 'buffer', keyword_length = 0 }
     }
   }),
 

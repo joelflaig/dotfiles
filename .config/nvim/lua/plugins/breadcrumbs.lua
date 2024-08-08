@@ -1,3 +1,76 @@
+local symbols = {
+  Array = '󰅪 ',
+  Boolean = ' ',
+  BreakStatement = '󰙧 ',
+  Call = '󰃷 ',
+  CaseStatement = '󱃙 ',
+  Class = ' ',
+  Color = '󰏘 ',
+  Constant = ' ',
+  Constructor = ' ',
+  ContinueStatement = '→ ',
+  Copilot = ' ',
+  Declaration = '󰙠 ',
+  Delete = '󰩺 ',
+  DoStatement = ' ',
+  Enum = ' ',
+  EnumMember = '󰎦 ',
+  Event = '⚡',
+  Field = '󰜢 ',
+  File = '󰈮 ',
+  Folder = '󰉋 ',
+  ForStatement = ' ',
+  Function = '󰊕 ',
+  H1Marker = '󰉫 ', -- Used by markdown treesitter parser
+  H2Marker = '󰉬 ',
+  H3Marker = '󰉭 ',
+  H4Marker = '󰉮 ',
+  H5Marker = '󰉯 ',
+  H6Marker = '󰉰 ',
+  Identifier = ' ',
+  IfStatement = '󰇉 ',
+  Interface = ' ',
+  Keyword = '󰌋 ',
+  List = '󰅪 ',
+  Log = '󰦪 ',
+  Lsp = ' ',
+  Macro = '󰁌 ',
+  MarkdownH1 = '󰉫 ', -- Used by builtin markdown source
+  MarkdownH2 = '󰉬 ',
+  MarkdownH3 = '󰉭 ',
+  MarkdownH4 = '󰉮 ',
+  MarkdownH5 = '󰉯 ',
+  MarkdownH6 = '󰉰 ',
+  Method = '󰆧 ',
+  Module = '󰏗 ',
+  Namespace = '󰅩 ',
+  Null = '󰢤 ',
+  Number = ' ',
+  Object = ' ',
+  Operator = ' ',
+  Package = '󰆦 ',
+  Pair = '󰅪 ',
+  Property = '󰜢 ',
+  Reference = '󰦾 ',
+  Regex = ' ',
+  Repeat = ' ',
+  Scope = '󰅩 ',
+  Snippet = ' ',
+  Specifier = '󰦪 ',
+  Statement = '󰌋 ',
+  String = '󰉾 ',
+  Struct = ' ',
+  SwitchStatement = '󰺟 ',
+  Terminal = '',
+  Text = '󰉿 ',
+  Type = ' ',
+  TypeParameter = '󰆩 ',
+  Unit = ' ',
+  Value = '󰎠 ',
+  Variable = ' ',
+  WhileStatement = ' ',
+}
+
 return {
   'Bekaboo/dropbar.nvim',
   event = "BufRead",
@@ -11,107 +84,119 @@ return {
     local opts = {
       bar = {
         padding = {
-          left = 2,
+          left = 1,
           right = 1,
         },
-        sources = function(buf, _)
+        sources = function(b, _)
           local sources = require('dropbar.sources')
           -- local utils = require('dropbar.utils')
-          if vim.bo[buf].ft == 'markdown' then
+
+          local source = {
+            get_symbols = function (buf, win, cursor)
+              local lsp = sources.lsp.get_symbols(buf, win, cursor)
+              local ts = sources.treesitter.get_symbols(buf, win, cursor)
+
+              local path = sources.path.get_symbols(buf, win, cursor)
+              local file = path[#path]
+
+              local syms = {
+                file,
+              }
+
+              for idx,sym in ipairs(ts) do
+                if sym.icon == symbols.IfStatement  then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.SwitchStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.CaseStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.ForStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.WhileStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.DoStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.ContinueStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.BreakStatement then
+                  table.insert(syms, sym)
+                elseif sym.icon == symbols.Repeat then
+                  table.insert(syms, sym)
+                -- elseif sym.icon == symbols.Declaration then
+                --   table.insert(syms, sym)
+                -- elseif sym.icon == symbols.Delete then
+                --   table.insert(syms, sym)
+                -- elseif sym.icon == symbols.Statement then -- always check as last 
+                --   table.insert(syms, sym)
+                else
+                  if idx > #lsp then
+                  goto continue
+                  end
+
+                  if (lsp[idx].icon == symbols.Package) and (
+                    (lsp[idx].name == "if") or
+                    (lsp[idx].name == "else") or
+                    (lsp[idx].name == "elseif") or
+                    (lsp[idx].name == "elif") or
+                    (lsp[idx].name == "for") or
+                    (lsp[idx].name == "while") or
+                    (lsp[idx].name == "do") or
+                    (lsp[idx].name == "switch") or
+                    (lsp[idx].name == "match") or
+                    (lsp[idx].name == "case") or
+                    (lsp[idx].name == "break") or
+                    (lsp[idx].name == "continue") or
+                    (lsp[idx].name == "goto") or
+                    (lsp[idx].name == "try") or
+                    (lsp[idx].name == "except") or
+                    (lsp[idx].name == "catch") -- or
+                  ) then
+                    table.remove(lsp, idx)
+                    goto continue
+                  end
+
+                  table.insert(syms, lsp[idx])
+
+                  if ts[idx + 1] == symbols.Field then
+                    table.remove(ts, idx + 1)
+                    table.insert(syms, lsp[idx])
+                  elseif ts[idx + 1] == symbols.Property then
+                    table.remove(ts, idx + 1)
+                    table.insert(syms, lsp[idx])
+                  end
+                end
+                  ::continue::
+              end
+
+              -- if #lsp > #syms then
+              --   for i=(#lsp-#syms),#lsp do
+              --     table.insert(syms, lsp[i])
+              --   end
+              -- end
+
+              return syms
+            end
+          }
+          if vim.bo[b].ft == 'markdown' then
             return {
               -- sources.path,
               sources.markdown,
             }
           end
-          if vim.bo[buf].buftype == 'terminal' then
+          if vim.bo[b].buftype == 'terminal' then
             return {
               sources.terminal,
             }
           end
           return {
-            -- sources.path,
-            -- utils.source.fallback{
-              -- sources.lsp,
-              sources.treesitter,
-            -- }
+            source
           }
         end,
       },
 
       icons = {
         kinds = {
-          symbols = {
-            Array = '󰅪 ',
-            Boolean = ' ',
-            BreakStatement = '󰙧 ',
-            Call = '󰃷 ',
-            CaseStatement = '󱃙 ',
-            Class = ' ',
-            Color = '󰏘 ',
-            Constant = '󰏿 ',
-            Constructor = ' ',
-            ContinueStatement = '→ ',
-            Copilot = ' ',
-            Declaration = '󰙠 ',
-            Delete = '󰩺 ',
-            DoStatement = ' ',
-            Enum = ' ',
-            EnumMember = '󰎦 ',
-            Event = '⚡',
-            Field = '󰜢 ',
-            File = '󰈮 ',
-            Folder = '󰉋 ',
-            ForStatement = ' ',
-            Function = '󰊕 ',
-            H1Marker = '󰉫 ', -- Used by markdown treesitter parser
-            H2Marker = '󰉬 ',
-            H3Marker = '󰉭 ',
-            H4Marker = '󰉮 ',
-            H5Marker = '󰉯 ',
-            H6Marker = '󰉰 ',
-            Identifier = ' ',
-            IfStatement = '󰇉 ',
-            Interface = ' ',
-            Keyword = '󰌋 ',
-            List = '󰅪 ',
-            Log = '󰦪 ',
-            Lsp = ' ',
-            Macro = '󰁌 ',
-            MarkdownH1 = '󰉫 ', -- Used by builtin markdown source
-            MarkdownH2 = '󰉬 ',
-            MarkdownH3 = '󰉭 ',
-            MarkdownH4 = '󰉮 ',
-            MarkdownH5 = '󰉯 ',
-            MarkdownH6 = '󰉰 ',
-            Method = '󰆧 ',
-            Module = '󰏗 ',
-            Namespace = '󰅩 ',
-            Null = '󰢤 ',
-            Number = ' ',
-            Object = ' ',
-            Operator = ' ',
-            Package = '󰆦 ',
-            Pair = '󰅪 ',
-            Property = '󰜢 ',
-            Reference = '󰦾 ',
-            Regex = ' ',
-            Repeat = ' ',
-            Scope = '󰅩 ',
-            Snippet = ' ',
-            Specifier = '󰦪 ',
-            Statement = '󰅩 ',
-            String = '󰉾 ',
-            Struct = ' ',
-            SwitchStatement = '󰺟 ',
-            Terminal = '',
-            Text = '󰉿 ',
-            Type = ' ',
-            TypeParameter = '󰆩 ',
-            Unit = ' ',
-            Value = '󰎠 ',
-            Variable = ' ',
-            WhileStatement = ' ',
-          }
+          symbols = symbols
         },
       },
     }
@@ -141,6 +226,7 @@ return {
     vim.cmd("hi! default link DropBarKindDelete CmpItemKindKeyword")
     vim.cmd("hi! default link DropBarKindKeyword CmpItemKindKeyword")
     vim.cmd("hi! default link DropBarKindOperator Operator")
+    vim.cmd("hi! default link DropBarKindStatement CmpItemKindKeyword")
 
     -----
 

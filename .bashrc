@@ -4,6 +4,8 @@ if command -v termium > /dev/null 2>&1; then
 fi
 ### End of Codeium integration
 
+
+
 ### Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium >/dev/null 2>&1; then
 	
@@ -154,6 +156,8 @@ bash ~/dotfiles/city.sh
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 . "$HOME/.cargo/env"
+
+
 
 
 ### Added by Codeium. These lines cannot be automatically removed if modified
