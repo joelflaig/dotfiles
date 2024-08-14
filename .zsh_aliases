@@ -86,6 +86,7 @@ cdc() {
 # cat aliases
 alias cat='bat --theme "Catppuccin Mocha" --style full --tabs 2'
 alias cgd='bat --theme "Catppuccin Mocha" --diff-context 3'
+alias car=cat
 
 # fzf aliases
 alias fzf="fzf --border rounded --margin 2.5% --preview='cat {}'"

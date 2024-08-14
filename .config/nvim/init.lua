@@ -36,7 +36,7 @@ vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
 -- cursorline
 vim.o.cursorline = true
 -- conceal
-vim.wo.conceallevel = 2
+vim.o.conceallevel = 2
 -- readable line length (obsidian)
 vim.cmd("hi ColorColumn guibg=#222335")
 

@@ -8,12 +8,21 @@ vim.keymap.set('n', "<leader>g", function ()
   end
 end, { desc = "Switch gpt model"})
 
+local home = vim.fn.expand("$HOME")
+
 return {
   "jackMort/ChatGPT.nvim",
   event = "VeryLazy",
 
   config = function()
+    vim.cmd([[sign define chatgpt_action_start_block text=╭ texthl=ErrorMsg linehl=BufferLineBackground]])
+    vim.cmd([[sign define chatgpt_action_end_block text=╰ texthl=ErrorMsg linehl=BufferLineBackground]])
+
+    vim.cmd([[sign define chatgpt_chat_start_block text=╭ texthl=Constant]])
+    vim.cmd([[sign define chatgpt_chat_end_block text=╰ texthl=Constant]])
+
     local opts = {
+      api_key_cmd = "gpg --decrypt " .. home .. "/secrets/openai.txt.gpg",
       chat = {
         welcome_message =
           "          The more you know, the more you hurt;         \n"..
