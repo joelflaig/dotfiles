@@ -4,8 +4,6 @@ if command -v termium > /dev/null 2>&1; then
 fi
 ### End of Codeium integration
 
-
-
 # contains zsh configuration
 autoload -U compinit; compinit
 
@@ -42,10 +40,9 @@ city
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-
-
 source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 ### Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium > /dev/null 2>&1; then

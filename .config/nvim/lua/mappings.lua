@@ -1,7 +1,6 @@
 -- mapping shortcuts
 local map = vim.keymap.set
 local unmap = vim.keymap.del
-local wk = require("which-key")
 
 -- remap command mode enter
 map({ "n", "v" }, ";", ":", { desc = " CMD enter command mode" })
@@ -93,4 +92,26 @@ map("n", "<leader>sb", "<cmd> SidebarNvimToggle <cr>", { desc = "Toggle sidebar"
 -- dropbar
 map("n", "<leader>dp", function() require('dropbar.api').pick() end, { desc = " Pick dropbar" })
 map("n", "<leader>df", function() require("dropbar.menu").dropbar_menu_t:fuzzy_find_open() end,{ desc = " Fuzzy pick dropbar" })
+
+-- luasnip
+vim.keymap.set({ 'i', 's' }, '<Tab>', function()
+  if vim.snippet.active({ direction = 1 }) then
+    return '<cmd>lua vim.snippet.jump(1)<cr>'
+  else
+    return '<Tab>'
+  end
+end, { desc = "Jump to next snippet placeholder", expr = true })
+
+map("i", "<C-s>", function ()
+  require("luasnip.extras.select_choice")()
+end)
+
+map("v", "<C-b>", function ()
+  vim.cmd('normal "ac')
+  require("luasnip.extras.otf").on_the_fly()
+end, { desc = "Expand otf snippet in register a" })
+
+map("i", "<C-b>", function ()
+  require("luasnip.extras.otf").on_the_fly("a")
+end, { desc = "Expand otf snippet in register a" })
 
