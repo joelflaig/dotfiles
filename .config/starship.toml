@@ -16,7 +16,7 @@ palette = 'catppuccin_mocha'
 continuation_prompt = '[ ](bold blue)' # duh
 
 [status]
-format = "[](bg)[$symbol$status]($style)[](bg) "
+format = "[](bg)[$symbol$status]($style)[](bg)"
 symbol = "❌"
 success_symbol = ""
 not_executable_symbol = "🚫"
@@ -67,6 +67,7 @@ read_only = " 󰌾"
 "Pictures" = ""
 "Projects" = ""
 "Videos" = ""
+"Vaults" = "󱥭"
 
 ".config" = ""
 "dotfiles" = "󱗿"
@@ -86,6 +87,8 @@ read_only = " 󰌾"
 "lazygit" = "󰊢"
 "tmux" = ""
 "yazi" = "🦆"
+
+"Bible" = "󰂢"
 
 [cmd_duration]
 min_time = 2000
@@ -212,6 +215,9 @@ style = "fg:bg bg:sapphire"
 
 [nodejs]
 symbol = " "
+format = "[](bg)[$symbol](fg:teal bg:bg)[](fg:bg bg:teal)[ $version]($style)[](teal) "
+style = "fg:bg bg:teal"
+
 
 [ocaml]
 symbol = " "

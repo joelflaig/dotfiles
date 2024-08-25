@@ -1,20 +1,19 @@
 lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
+    - /home/joel/Projects/tmux
     - /home/joel/init
+    - /home/joel/Projects/rust/2048
     - /home/joel/Projects/nvim/clip.nvim
     - /home/joel/.local/share/nvim/lazy/clip.nvim
-    - /home/joel/Projects/rust/2048
     - /home/joel/.local/share/nvim/lazy/dropbar.nvim
     - /home/joel/.local/share/nvim/lazy/ChatGPT.nvim
-    - /home/joel/vaults/Personal
-    - /home/joel/vaults/Klasse
-    - /home/joel/vaults/Grace
     - /home/joel/.local/share/nvim/lazy/harpoon
     - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
 startuppopupversion: 5
 lastversion: 0.43.1
 customcommandshistory:
+    - git push origin HEAD:dev
     - 'nvim: Added markdown render bullets and checkboxes'
 hidecommandlog: false
 ignorewhitespaceindiffview: false

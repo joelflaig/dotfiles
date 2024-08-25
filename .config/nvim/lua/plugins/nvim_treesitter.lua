@@ -2,7 +2,7 @@ return {
 	"nvim-treesitter/nvim-treesitter",
   config = function ()
     require("nvim-treesitter.configs").setup {
-      ensure_installed = { "c", "cpp", "lua", "python", "bash", "json", "yaml", "toml" },
+      ensure_installed = { "c", "cpp", "lua", "python", "bash", "json", "yaml", "toml", "html", "markdown", "markdown_inline" },
       matchup = {
         enable = true,
       },

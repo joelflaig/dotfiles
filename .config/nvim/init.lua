@@ -9,7 +9,7 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 -- pairs
-vim.cmd.set("mps+=<:>")
+vim.cmd("set mps+=<:>")
 -- numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -18,7 +18,7 @@ vim.opt.numberwidth = 3
 vim.opt.splitbelow = true -- open new vertical split bottom
 vim.opt.splitright = true -- open new horizontal splits right
 -- lualine always at bottom, no split
-vim.cmd.set('ls=3')
+vim.cmd('set ls=3')
 -- fold
 vim.o.foldenable = true
 vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep:│,foldclose:]]
@@ -37,6 +37,8 @@ vim.cmd.highlight('IndentLineCurrent guifg=#ffaf87')
 vim.o.cursorline = true
 -- conceal
 vim.o.conceallevel = 2
+-- scroll
+vim.o.scrolloff = 5
 -- readable line length (obsidian)
 vim.cmd("hi ColorColumn guibg=#222335")
 
