@@ -2,7 +2,6 @@ lastupdatecheck: 0
 recentrepos:
     - /home/joel/dotfiles
     - /home/joel/Projects/tmux
-    - /home/joel/init
     - /home/joel/Projects/rust/2048
     - /home/joel/Projects/nvim/clip.nvim
     - /home/joel/.local/share/nvim/lazy/clip.nvim

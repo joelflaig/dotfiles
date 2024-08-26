@@ -18,15 +18,19 @@ return {
     workspaces = {
       {
         name = "grace",
-        path = "~/vaults/Grace",
+        path = "~/Vaults/Grace",
       },
       {
         name = "personal",
-        path = "~/vaults/Personal",
+        path = "~/Vaults/Personal",
       },
       {
         name = "class",
-        path = "~/vaults/Klasse",
+        path = "~/Vaults/Klasse",
+      },
+      {
+        name = "bible",
+        path = "~/Vaults/Bible/",
       },
       {
         name = "dynamic",
