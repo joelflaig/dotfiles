@@ -74,6 +74,8 @@ read_only = " 󰌾"
 "test" = ""
 "src" = ""
 "bin" = "󰘨"
+"pkgs" = "󰏗"
+"pkg" = "󰏗"
 
 "cpp" = ""
 "rust" = ""

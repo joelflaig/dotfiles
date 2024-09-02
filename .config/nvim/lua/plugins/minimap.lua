@@ -7,16 +7,27 @@ return {
     vim.opt.sidescrolloff = 36 -- It's recommended to set a large value
     vim.g.neominimap = {
       auto_enable = true,
-      window_border = "rounded",
-
-      -- Width of the minimap window
-      minimap_width = 23,
 
       -- How many columns a dot should span
       x_multiplier = 2,
 
       -- How many rows a dot should span
       y_multiplier = 1,
+
+      float = {
+        minimap_width = 23,
+
+        max_minimap_height = nil,
+
+        margin = {
+          right = 0,
+          top = 0,
+          bottom = 0,
+        },
+        z_index = 1,
+
+        window_border = "rounded",
+      },
 
       exclude_filetypes = {
         "help",
