@@ -1,6 +1,6 @@
 return {
   "joelflaig/harpoon",
-  branch = "harpoon2",
+  branch = "main",
   dependencies = { "nvim-lua/plenary.nvim" },
   lazy = false,
 
