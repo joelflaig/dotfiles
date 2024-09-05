@@ -25,8 +25,6 @@ if [ -f ~/.zsh_aliases ]; then
 	. ~/.zsh_aliases
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
@@ -38,11 +36,13 @@ tmux && q
 clear
 city
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-source /home/linuxbrew/.linuxbrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source ~/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
+source ~/.nix-profile/share/zsh/zsh-autopair/autopair.zsh
 
 ### Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium > /dev/null 2>&1; then

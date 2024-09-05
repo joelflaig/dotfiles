@@ -17,7 +17,6 @@
           zsh-syntax-highlighting # zsh-syntax-highlighting -- syntax highlighting for zsh
           zsh-autosuggestions # zsh-autosuggestions -- suggestions for zsh
           zsh-autopair # zsh-autopair -- brackets, quotes, etc.
-          zsh-autocomplete # zsh-autocomplete -- completion for zsh
           zsh-vi-mode # zsh-vi-mode -- better vi mode
           thefuck # thefuck -- corrects command mistakes
 
@@ -57,6 +56,10 @@
           sl # sl -- steam locomotive
           yq # yq -- yaml, json, xml processor
           btop # btop++ -- command line task manager
+          man # man -- docs
+
+          # web
+          firefox # firefox -- web browser
         ];
       };
     };
