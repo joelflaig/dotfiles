@@ -60,6 +60,10 @@
 
           # web
           firefox # firefox -- web browser
+          # clipboard
+          wl-clipboard # wl-clipboard -- clipboard manager
+          wl-clip-persist # wl-clip-persist -- keep wl-clipboard after program closes
+          clipse # clipse -- tui clipboard manager
         ];
       };
     };
