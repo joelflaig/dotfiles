@@ -3,6 +3,14 @@ local lspconfig = require "lspconfig"
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
+-- Filetypes
+vim.filetype.add({
+  pattern = {
+    [".*/hypr/.*%.conf"] = "hyprlang",
+    [".*%.hl"] = "hyprlang"
+  },
+})
+
 local servers = {
   "html",
   "lua_ls",
@@ -11,6 +19,7 @@ local servers = {
   "rust_analyzer",
   "mojo",
   "pylsp",
+  "hyprls",
 }
 
 mason_lspconfig.setup {
@@ -57,7 +66,7 @@ for _, lsp in ipairs(servers) do
 end
 
 -- typescript
-lspconfig.tsserver.setup {
+lspconfig.ts_ls.setup {
   on_attach = on_attach,
   on_init = on_init,
   capabilities = capabilities,
@@ -113,6 +122,10 @@ cmp.setup{
     },
     expandable_indicator = true,
     format = function(entry, vim_item)
+      if vim_item.kind then
+        vim_item.kind = ""
+        return vim_item
+      end
       -- override icons highlights
       vim.cmd.hi("CmpItemKindCodeium guifg = #16eeb8")
 
@@ -136,6 +149,7 @@ cmp.setup{
       if item.detail then
         vim_item.menu = " " .. item.detail
       end
+
       -- highlight return values (sadly no lsp possible)
       vim.cmd.hi("CmpItemMenu guifg = #f9e2af")
 
