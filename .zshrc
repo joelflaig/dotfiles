@@ -36,13 +36,13 @@ tmux && q
 clear
 city
 
-source ~/.nix-profile/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-source ~/.nix-profile/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source ~/.nix-profile/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-
-source ~/.nix-profile/share/zsh/zsh-autopair/autopair.zsh
+# source ./zsh-autosuggestions/zsh-autosuggestions.zsh
+# 
+# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# 
+# source ./zsh-vi-mode/zsh-vi-mode.plugin.zsh
+# 
+# source ./zsh/zsh-autopair/autopair.zsh
 
 ### Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium > /dev/null 2>&1; then

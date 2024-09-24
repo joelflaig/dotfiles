@@ -15,7 +15,7 @@ alias c="clear && city"
 alias v=nvim
 alias uid="cat /etc/passwd"
 alias secret="zsh ~/dotfiles/secrets/secret.sh"
-alias update="nix profile upgrade 'pkgs'"
+alias update="sudo nixos-rebuild switch"
 
 # configuration aliases
 alias cfg='nvim ~/dotfiles/.zshrc'

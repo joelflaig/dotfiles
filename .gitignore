@@ -1,7 +1,6 @@
 .config/gh
 .tmux/plugins
 .fzf
-
 .config/spotify-tui/.spotify_token_cache.json
 .config/spotify-tui/client.yml
 .config/obsidian
@@ -15,3 +14,16 @@
 .config/thefuck/__pycache__/settings.cpython-311.pyc
 .config/lazygit/state.yml
 .config/lazygit/state.yml
+.config/Kingsoft
+.config/lazygit/state.yml
+.config/Kingsoft
+.config/lazygit/state.yml
+.config/Kingsoft
+.config/lazygit/state.yml
+.config/Kingsoft
+.config/lazygit/state.yml
+.config/session
+.config/kde.org
+.config/dconf
+.config/clipse
+.config/clipse/clipboard_history.json

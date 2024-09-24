@@ -1,0 +1,20 @@
+lastupdatecheck: 0
+recentrepos:
+    - /home/joel/dotfiles
+    - /home/joel/.local/share/nvim/lazy/clip.nvim
+    - /home/joel/.local/share/nvim/lazy/dropbar.nvim
+    - /home/joel/.local/share/nvim/lazy/ChatGPT.nvim
+    - /home/joel/.local/share/nvim/lazy/harpoon
+    - /home/joel/.local/share/nvim/lazy/dap-sidebar.nvim
+startuppopupversion: 5
+lastversion: 0.42.0
+customcommandshistory:
+    - git push origin HEAD:dev
+    - 'nvim: Added markdown render bullets and checkboxes'
+hidecommandlog: false
+ignorewhitespaceindiffview: false
+diffcontextsize: 3
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always

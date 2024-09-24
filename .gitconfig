@@ -34,3 +34,5 @@
 	required = true
 [pack]
 	windowMemory = 32m
+[safe]
+	directory = /etc/nixos

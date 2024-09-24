@@ -36,6 +36,7 @@
           neovim # neovim -- editor
 
           # git
+          git # git -- version management
           lazygit # lazygit -- git client
           delta # delta -- diff tool
           gh # gh -- github cli
