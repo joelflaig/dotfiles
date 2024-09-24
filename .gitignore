@@ -27,3 +27,4 @@
 .config/dconf
 .config/clipse
 .config/clipse/clipboard_history.json
+.config/lazygit/state.yml
