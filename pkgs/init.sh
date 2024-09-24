@@ -32,6 +32,28 @@ git lfs install --system
 termium auth
 termium shell-hook install
 
+# xdph
+sudo pacman -S xdg-desktop-portal-hyprland
+sudo pacman -S xdg-desktop-portal-gtk
+
+# qt
+sudo pacman -S qt5-wayland
+sudo pacman -S qt6-wayland
+
+# hyprpaper
+sudo pacman -S hyprpaper
+
+ln -s /usr/share/applications ~/.nix-profile/share/applications
+
+# hyprls
+go install github.com/ewen-lbh/hyprls/cmd/hyprls@latest
+
+# sddm
+sudo pacman -Syu qt6-svg qt6-declarative
+
+# chinese characters
+sudo pacman -Sy adobe-source-han-sans-cn-fonts
+
 echo "To use my config files, you can execute config.sh.
 IMPORTANT: before executing config.sh, make sure all configuration files in $HOME are deleted."
 

@@ -18,10 +18,6 @@ alias cfgt='nvim ~/dotfiles/.tmux.conf'
 alias cfgv='nvim ~/dotfiles/.config/nvim/init.lua'
 alias cfgs='nvim ~/.config/starship.toml'
 
-# aliases for machine initialization
-alias ini_init='init/init.sh'
-alias ini_test='init/test.sh'
-
 # git aliases
 alias gs='git status'
 alias gl='git log'
