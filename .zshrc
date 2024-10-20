@@ -1,8 +1,9 @@
-### Added by Codeium. These lines cannot be automatically removed if modified
+## Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium > /dev/null 2>&1; then
   eval "$(termium shell-hook show pre)"
 fi
 ### End of Codeium integration
+
 
 # contains zsh configuration
 autoload -U compinit; compinit
@@ -36,16 +37,14 @@ tmux && q
 clear
 city
 
-# source ./zsh-autosuggestions/zsh-autosuggestions.zsh
-# 
-# source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# 
-# source ./zsh-vi-mode/zsh-vi-mode.plugin.zsh
-# 
-# source ./zsh/zsh-autopair/autopair.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /usr/share/zsh/plugins/zsh-autopair/autopair.zsh
 
 ### Added by Codeium. These lines cannot be automatically removed if modified
 if command -v termium > /dev/null 2>&1; then
   eval "$(termium shell-hook show post)"
 fi
 ### End of Codeium integration
+

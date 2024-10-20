@@ -28,3 +28,8 @@
 .config/clipse
 .config/clipse/clipboard_history.json
 .config/lazygit/state.yml
+.config/Electron
+.config/go/telemetry/local
+.config/obs-studio
+.config/obs-studio
+.config/obs-studio/basic/scenes
