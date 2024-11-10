@@ -1,16 +1,23 @@
-#! /usr/bin/bash
+#!/bin/bash
+WALLPAPERS_DIR=$HOME/Pictures/wallpapers
 
-wallpaper_fold=~/Pictures/wallpapers/
-wallpaper_loc="$(ls $wallpaper_fold | wofi -IGp wallpapers --show dmenu)"
+rofi_cmd() {
+	rofi -dmenu \
+    -i \
+    -theme ~/.config/rofi/themes/wall.rasi
+}
 
-if [[ -f $wallpaper_fold/$wallpaper_loc ]]; then
-  notify-send "Setting wallpaper"
-  notify-send $(swww img $wallpaper_fold/$wallpaper_loc --transition-type center)
-  notify-send "Wallpaper set"
-elif [[ -d $wallpaper_fold/$wallpaper_loc ]]; then
-  notify-send "Error: selected wallpaper is a folder"
-else
-  notify-send "Error"
+for wallpaper in "$WALLPAPERS_DIR"; do
+  if [ -f "$wallpaper" ]; then
+    wallpaper_name=$(basename "$wallpaper")
+  fi
+done
+
+selected_wallpaper=$(find "${WALLPAPERS_DIR}" -type f -printf "%P\n" | sort | while read -r A ; do echo -en "$A\x00icon\x1f""${WALLPAPERS_DIR}"/"$A\n" ; done | rofi_cmd)
+
+if [[ $selected_wallpaper == "" ]]; then
   exit 1
 fi
+
+swww img $WALLPAPERS_DIR/$selected_wallpaper -t any
 
