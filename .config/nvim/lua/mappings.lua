@@ -51,6 +51,7 @@ map('n', '<leader>fb', '<cmd> Telescope buffers hidden=true no_ignore=true <cr>'
 map('n', '<leader>fh', '<cmd> Telescope help_tags hidden=true no_ignore=true <cr>', { desc = " Find help" })
 map('n', '<leader>fr', '<cmd> Telescope oldfiles hidden=true no_ignore=true <cr>', { desc = "󰑐 Find old files"})
 map('n', '<leader>fc', '<cmd> Telescope current_buffer_fuzzy_find <cr>', { desc = " Find in current buffer" })
+
 -- gitsigns
 map('n', '<leader>tlb', '<cmd> Gitsigns toggle_current_line_blame <cr>', { desc = "Toggle git blame" })
 
@@ -114,4 +115,17 @@ end, { desc = "Expand otf snippet in register a" })
 map("i", "<C-b>", function ()
   require("luasnip.extras.otf").on_the_fly("a")
 end, { desc = "Expand otf snippet in register a" })
+
+-- color picker
+map("n", "<leader>cph", function ()
+  require("minty.huefy").toggle()
+end)
+
+map("n", "<leader>cps", function ()
+  require("minty.shades").toggle()
+end)
+
+-- For border or without border
+-- require("minty.huefy").toggle( { border = true } )
+-- add border=false for flat look on shades window
 

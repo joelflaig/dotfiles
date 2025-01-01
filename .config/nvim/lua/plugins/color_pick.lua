@@ -1,6 +1,6 @@
 return {
   "nvchad/minty",
-  lazy = true,
+  lazy = false,
 
   dependencies = {
     "nvchad/volt"

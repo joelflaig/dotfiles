@@ -14,3 +14,4 @@ return {
     mac_window_bar = true,
   },
 }
+

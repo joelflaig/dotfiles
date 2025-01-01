@@ -58,12 +58,16 @@ vim.api.nvim_create_autocmd({ "BufLeave", "BufWinLeave" },{
 })
 
 -- diagnostic signs
-vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError", numhl = "" })
-vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn", numhl = "" })
-vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo", numhl = "" })
-vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint", numhl = "" })
+vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError", numhl = "DiagnosticSignError" })
+vim.fn.sign_define("DiagnosticSignWarn", { text = " ", texthl = "DiagnosticSignWarn", numhl = "DiagnosticSignWarn" })
+vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSignInfo", numhl = "DiagnosticSignInfo" })
+vim.fn.sign_define("DiagnosticSignHint", { text = "󰌶 ", texthl = "DiagnosticSignHint", numhl = "DiagnosticSignHint" })
 
--- lazy
+-- base64
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46_cache/"
+
+----------------Lazy----------------
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -82,6 +86,12 @@ local lazy_config = require "configs.lazy"
 
 -- lazy config
 require("lazy").setup("plugins", lazy_config)
+
+----------------Lazy----------------
+
+-- base64 themes
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
 
 -- lspconfig load
 require("configs.lspconf")

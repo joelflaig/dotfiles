@@ -1,5 +1,6 @@
 -- EXAMPLE 
 local lspconfig = require "lspconfig"
+local lspkind = require'lspkind'
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
@@ -98,7 +99,7 @@ local cmp_kinds = {
   Event = "⚡",
   Operator = "",
   TypeParameter = "󰆩",
-  Codeium = "",-- ""; -- "",
+  Codeium = " ",-- " "; -- "",
 }
 
 -- if the stating the icon in the cmp_kinds table does not work, use this
@@ -109,43 +110,38 @@ local override_icons = {
   nerdfont = "",
 }
 
+-- override icons highlights
+vim.cmd("hi CmpItemKindCodeium guifg = #16eeb8")
+
 local cmp = require 'cmp'
 local luasnip = require "luasnip"
 
 cmp.setup{
-
   formatting = {
     fields = {
       'abbr',
       'kind',
       'menu'
     },
+
     expandable_indicator = true,
     format = function(entry, vim_item)
-      if vim_item.kind then
-        vim_item.kind = ""
-        return vim_item
-      end
-      -- override icons highlights
-      vim.cmd.hi("CmpItemKindCodeium guifg = #16eeb8")
+      -- if vim_item.kind then
+         -- vim_item.kind = ""
+         -- return vim_item
+      -- end
 
-      -- for calc
+      -- overrides
       if entry.source.name == "calc" then
         vim_item.kind = override_icons.calc
-      end
-
-      -- for emoji
-      if entry.source.name == "emoji" then
+      elseif entry.source.name == "emoji" then
         vim_item.kind = override_icons.emoji
-      end
-
-      -- for nerdfont
-      if entry.source.name == "nerdfont" then
+      elseif entry.source.name == "nerdfont" then
         vim_item.kind = override_icons.nerdfont
       end
 
       -- return values with lsp
-      local item = entry:get_completion_item()
+      local item = entry.completion_item
       if item.detail then
         vim_item.menu = " " .. item.detail
       end
